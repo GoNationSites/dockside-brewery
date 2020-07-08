@@ -14,6 +14,7 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "dependencies": {
+    "breakpoint-sass": "^2.7.1",
     "bulma": "^0.9.0",
     "gatsby": "^2.23.12",
     "gatsby-plugin-react-helmet": "^3.3.9",
