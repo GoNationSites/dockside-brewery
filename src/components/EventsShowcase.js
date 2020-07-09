@@ -124,6 +124,9 @@ const EventsShowcase = () => {
                     </div>
                   ))}
               </div>
+              <div className="has-text-centered">
+                  <Link className="button is-outlined is-white is-uppercase">View All Events</Link>
+              </div>
             </div>
           </>
         )
