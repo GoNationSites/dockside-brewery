@@ -1,4 +1,5 @@
 import React from "react"
+import {Link} from 'gatsby'
 import { ParallaxProvider } from "react-scroll-parallax"
 import logo from "../../public/logo-gray.png"
 import Layout from "../components/Layout"
@@ -14,8 +15,33 @@ export default function Index() {
   return (
     <Layout>
       <ParallaxProvider>
-        <Slider />
-        <section className="section section-call-dir">
+        <div className="is-hidden-desktop">
+          <Slider />
+        </div>
+        <div className="is-hidden-mobile">
+          <div className="desktop-video-container">
+            <video muted="true" muted playsInline autoPlay loop>
+              <source
+                src="https://assets.mixkit.co/videos/preview/mixkit-yachts-dock-and-the-city-9683-large.mp4"
+                type="video/mp4"
+              ></source>
+              <source
+                src="https://assets.mixkit.co/videos/preview/mixkit-yachts-dock-and-the-city-9683-large.mp4"
+                type="video/ogg"
+              ></source>
+              Your browser does not support the video tag.
+            </video>
+
+            <div className="hero-text-container">
+              <h1 className="title has-text-centered has-text-white">
+                independent craft brewery, restaurant and waterfront biergarten
+              </h1>
+              <Link>Become a Dockside insider</Link>
+            </div>
+          </div>
+        </div>
+
+        <section className="section section-call-dir is-hidden-desktop">
           <div className="columns is-mobile is-hidden-tablet">
             <div className="column has-text-centered">
               <a>Call</a>
@@ -28,7 +54,7 @@ export default function Index() {
             </div>
           </div>
         </section>
-        <section className="section section-shout">
+        <section className="section section-shout is-hidden-desktop">
           <div className="shout-logo">
             <img src={logo} alt="Dockside Brewery" />
           </div>

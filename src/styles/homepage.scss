@@ -1,5 +1,11 @@
 .slide-container {
     position: relative;
+
+    &.slide-container__with-shout {
+        height: calc(100vh - 77.5px);
+        background-size: cover;
+        background-position: center;
+    }
 }
 
 p {
@@ -13,6 +19,16 @@ p {
     color: inherit;
 }
 
+.desktop-video-container {
+    height: calc(100vh - 77.5px);
+    position: relative;
+    video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
 .hero-text-container {
     background: rgba(0,0,0,.25);
     position: absolute;
@@ -24,11 +40,19 @@ p {
     justify-content: center;
     align-items: center;
     height: 100%;
+    @include breakpoint($desktop) {
+        width: 100%;
+    }
     h1 {
         text-transform: uppercase;
         font-size: 1.75rem;
         line-height: 2.5rem;
         text-shadow: 2px 3px 5px rgba(0,0,0,0.5);
+        @include breakpoint($desktop) {
+            font-size: 3.25rem;
+            line-height: 5rem;
+            max-width: 900px;
+        }
     }
     a {
         color: white;
@@ -39,6 +63,16 @@ p {
         padding: 1.25rem 2rem;
         text-shadow: 2px 3px 5px rgba(0,0,0,0.5);
         font-size: 1.15rem;
+        @include breakpoint($desktop) {
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            &:hover {
+                text-shadow: none;
+                background: white;
+                color: #111;
+                transition: background .3s;
+            }
+        }
     }
 }
 

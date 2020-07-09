@@ -8,7 +8,6 @@ const Shout = () => {
     const shoutURL = 'https://data.prod.gonation.com/profile/shoutsnew/bzn-yO3xgUsKQCS7GWg0Q2ewbQ'
 
     useEffect(() => {
-        console.log('hey')
         axios({
         url: shoutURL,
         adapter: jsonpAdapter,
