@@ -8,6 +8,7 @@ import Hops from "../components/hops"
 import FeaturedBeer from "../components/FeaturedBeer"
 import MenuShowcase from "../components/MenuShowcase"
 import ParallaxImage from '../components/parallaxImage'
+import EventsShowcase from '../components/EventsShowcase'
 
 export default function Index() {
   return (
@@ -73,9 +74,13 @@ export default function Index() {
         <section className=" section__pizza-showcase">
           <MenuShowcase />
         </section>
-
+        <div className="is-hidden-mobile">
           <ParallaxImage />
+        </div>
       </ParallaxProvider>
+      <section className="section section__events-module">
+        <EventsShowcase />
+      </section>
     </Layout>
   )
 }

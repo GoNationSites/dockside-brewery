@@ -14,16 +14,11 @@ const ParallaxImage = () => (
       ,
         amount: 0.9,
       },
-    //   {
-    //     image: "https://foo.com/bar.png",
-    //     amount: 0.2,
-    //   },
     ]}
     style={{
       height: "500px",
     }}
   >
-    <h1 className="has-text-centered">Text content here</h1>
   </ParallaxBanner>
 )
 
