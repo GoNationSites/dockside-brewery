@@ -8,6 +8,7 @@ import Twitter from './twitter'
 import Facebook from './facebook'
 import Instagram from './instagram'
 import Logo from '../../public/footer-logo.png'
+import DesktopLogo from "../../public/desktop-footer-logo.png"
 
 const Footer = () => {
   return (
@@ -80,7 +81,12 @@ const Footer = () => {
         </div>
       </div>
       <div className="footer-logo">
-        <img src={Logo} alt="Dockside" />
+        <span className="is-hidden-desktop">
+          <img src={Logo} alt="Dockside" />
+        </span>
+        <span className="is-hidden-touch">
+          <img src={DesktopLogo} alt="Dockside" />
+        </span>
       </div>
       <div className="gonation">
         <img

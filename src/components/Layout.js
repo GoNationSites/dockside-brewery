@@ -6,6 +6,7 @@ import Close from "./close"
 import Beer from "./beer"
 import Hops from "./hops"
 import Footer from "./Footer"
+import DesktopShoutBanner from './DesktopShoutBanner'
 import "../styles/index.scss"
 
 const Layout = ({ children }) => {
@@ -28,6 +29,7 @@ const Layout = ({ children }) => {
 
   return (
     <main>
+      <DesktopShoutBanner />
       <header className={`${navBackground ? "scrolled" : ""}`}>
         <div className="header-left">
           <img src={MobileLogo} alt="" />

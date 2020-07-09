@@ -78,7 +78,7 @@ const EventsShowcase = () => {
     const getEventTime = (event) => {
         if(event.isRecurring) {
             const eventDays = Object.keys(event.days)
-            return <h5 className="subtitle">{eventDays.map(day => day)}</h5>
+            return <h5 className="subtitle">Every {eventDays.map(day => day)}</h5>
         }
         return <h5 className="subtitle">{moment(event.starts).format('MMMM Do YYYY, h:mm a')}</h5>
     }
@@ -117,7 +117,7 @@ const EventsShowcase = () => {
                     (event, idx) => event._id !== activeEvent._id && idx < 5
                   )
                   .map(event => (
-                    <div className="column" onClick={() => setActiveEvent(event)}>
+                    <div className="column is-2-desktop" onClick={() => setActiveEvent(event)}>
                       <div className="event-module__image">
                         <img src={event.image} alt={event.name} />
                       </div>
