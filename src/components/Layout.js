@@ -29,14 +29,17 @@ const Layout = ({ children }) => {
 
   return (
     <main>
-      <DesktopShoutBanner />
+      <span className="is-hidden-touch">
+        <DesktopShoutBanner />
+      </span>
+
       <header className={`${navBackground ? "scrolled" : ""}`}>
         <div className="header-left">
           <img src={MobileLogo} alt="" />
           {/* <a className="is-uppercase">Explore</a> */}
         </div>
         <div className="header-right">
-          <nav className="nav__desktop">
+          <nav className="nav__desktop is-hidden-touch">
             <div className="nav-link">
               <Link>Home</Link>
             </div>
