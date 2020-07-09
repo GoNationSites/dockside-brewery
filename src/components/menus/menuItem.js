@@ -2,7 +2,7 @@ import React from "react"
 import { Image, Box, Flex, Text } from "@theme-ui/components"
 import Price from "./price"
 import PriceWithVariants from "./PriceWithVariants"
-import camera from "../images/camera.svg"
+import LogoRed from "../images/logored.png"
 
 const MenuItem = ({ item, type, withDollar, hasMenuImages }) => {
   const getMenuItemType = () => {
@@ -18,13 +18,19 @@ const MenuItem = ({ item, type, withDollar, hasMenuImages }) => {
     <div className="menuItemInnerContainer">
       {console.log(item)}
       {item.photo_id ? (
-        <img className="menuItemImage" src={item.imageUrl} alt="menu item" />
+        <div className="menuItemImage">
+          <div className="image-fill"></div>
+          <img src={item.imageUrl} alt="menu item" />
+        </div>
       ) : (
-        <img
-          className="menuItemDefaultImage"
-          src="https://res.cloudinary.com/gonation/gonation.data.prod/rtzoxsdqpogalxyxrzya"
-          alt="default menu item"
-        />
+        <div className="menuItemDefaultImage">
+          <div className="image-fill"></div>
+          <img
+            className="menuItemDefaultImage"
+            src={LogoRed}
+            alt="default menu item"
+          />
+        </div>
       )}
       <div className="menuItemContentContainer">
         {item.variants.length && item.variants[0].label === "" ? (

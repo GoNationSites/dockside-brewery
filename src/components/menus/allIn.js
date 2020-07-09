@@ -56,10 +56,7 @@ const AllIn = ({ menuData, setModalActive, onBackClick }) => {
   return (
     <>
       {onBackClick ? (
-        <a
-          className="back-to-menu-btn button is-dark"
-          onClick={() => onBackClick()}
-        >
+        <a className="back-to-menu-btn button" onClick={() => onBackClick()}>
           ← Back
         </a>
       ) : (
