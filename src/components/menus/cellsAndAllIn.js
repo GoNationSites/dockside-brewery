@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react"
 import AllIn from "./allIn"
 import Cells from "./cells"
 import Tabs from "./tabs"
-import TabsView from "./TabsView"
+import TabsView from "./tabsView"
 
 const CellsAndAllIn = ({ menuData, setModalActive, isCellsAndTabs }) => {
   const [activeSection, setActiveSection] = useState(null)
