@@ -264,3 +264,74 @@ p {
         margin: .5rem .75rem;
     }
 }
+
+footer {
+    .footer-details {
+        border-top: 2px solid #fff;
+        background: $primary;
+        color: white;
+        padding: 2rem;
+    }
+    .subtitle {
+        color: $secondary;
+        margin: 0!important;
+        margin-bottom: 1.25rem;
+        font-weight: bold;
+        font-size: 1.5rem;
+        margin-top: .5rem;
+    }
+    .column {
+        margin: 1.25rem;
+        border-bottom: 2px solid white;
+    }
+    p {
+        margin: 0 0 .5rem 0;
+    }
+    .footer-map {
+        display: flex;
+        flex-wrap: wrap;
+        background: #eee;
+        padding: 1.5rem 0;
+    }
+    .footer-link {
+        width: 50%;
+        text-align: center;
+        font-weight: bold;
+        margin-bottom: .75rem;
+        a {
+            color: $dark;
+            text-transform: uppercase;
+            &:hover {
+                color: $primary
+            }
+        }
+    }
+    .social-title {
+        margin-top: 2rem;
+    }
+    .footer-social {
+        display: flex;
+        justify-content: center;
+        > div {
+            margin: 0 1rem;
+            width: 50px;
+            height: 50px;
+            border-radius: 100%;
+            background: $secondary;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+    .footer-logo {
+        margin: 2rem 0;
+    }
+    .gonation {
+        border-top: 2px solid $secondary;
+        text-align: center;
+        padding: 1rem 0;
+        img {
+            max-width: 200px;
+        }
+    }
+}

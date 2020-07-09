@@ -4,6 +4,7 @@ import MobileLogo from '../../public/logo-white.png'
 import Hamburger from './hamburger'
 import Close from './close'
 import Beer from './beer'
+import Footer from './Footer'
 import "../styles/index.scss"
 
 const Layout = ({children}) => {
@@ -71,6 +72,7 @@ const Layout = ({children}) => {
         </div>
 
         {children}
+        <Footer />
       </main>
     )
 }
