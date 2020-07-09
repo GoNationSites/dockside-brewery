@@ -125,3 +125,23 @@
     }
   }
 }
+
+.menu-sections-dropdown {
+  background: rgb(46, 94, 184);
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1rem;
+}
+
+.dropdown-section {
+  width: calc(50% - (0.5rem * 2));
+  margin: 0.5rem;
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+  font-size: 1.25rem;
+  @media (min-width: 767px) {
+    width: calc(33.33% - (0.5rem * 2));
+    margin: 0.5rem;
+  }
+}

@@ -13,7 +13,7 @@ const MenuCell = ({ onCellClick, section, inventory, numSections }) => {
 
   return (
     <div
-      className={`section-cell column`}
+      className={`section-cell`}
       onClick={onCellClick({ section, inventory })}
     >
       <div className={`gn-menu-cell`} style={blockStyle}>

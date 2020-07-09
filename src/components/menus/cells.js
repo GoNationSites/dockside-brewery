@@ -19,7 +19,10 @@ const Cells = ({ menuData, onCellClick }) => {
 
   return (
     <div>
-      <MenuSectionDropdown />
+      <MenuSectionDropdown
+        childSections={childSections}
+        onCellClick={onCellClick}
+      />
       {console.log(childSections)}
       <div className="cells-container">{renderChildSections()}</div>
     </div>
