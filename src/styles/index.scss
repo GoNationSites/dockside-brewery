@@ -1,11 +1,8 @@
-<<<<<<< HEAD
 @import "menus.scss";
 
 body {
   background-color: black;
 }
-=======
-@import './variables.scss';
-@import '../../node_modules/bulma/bulma.sass';
-@import '../../node_modules/breakpoint-sass/stylesheets/breakpoint';
->>>>>>> 3022c528828bd63a754b21bd1ff0ef314bd2989b
+@import "./variables.scss";
+@import "../../node_modules/bulma/bulma.sass";
+@import "../../node_modules/breakpoint-sass/stylesheets/breakpoint";

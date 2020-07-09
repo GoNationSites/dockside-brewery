@@ -3,7 +3,7 @@ import React from "react"
 export default function MenuSectionsDropdown() {
   return (
     <div>
-      <Button>Our Menu </Button>
+      <button>Our Menu </button>
 
       <div></div>
     </div>
