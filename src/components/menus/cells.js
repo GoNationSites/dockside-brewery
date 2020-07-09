@@ -1,6 +1,7 @@
 import React from "react"
 import splitSectionChildren from "../helpers/splitSectionChildren"
 import MenuCell from "./menuCell"
+import MenuSectionDropdown from "./MenuSectionsDropdown"
 
 const Cells = ({ menuData, onCellClick }) => {
   const { childSections } = splitSectionChildren(menuData)
@@ -16,7 +17,13 @@ const Cells = ({ menuData, onCellClick }) => {
     ))
   }
 
-  return <div className="cells-container">{renderChildSections()}</div>
+  return (
+    <div>
+      <MenuSectionDropdown />
+      {console.log(childSections)}
+      <div className="cells-container">{renderChildSections()}</div>
+    </div>
+  )
 }
 
 export default React.memo(Cells)

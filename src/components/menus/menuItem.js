@@ -16,12 +16,9 @@ const MenuItem = ({ item, type, withDollar, hasMenuImages }) => {
 
   const defaultType = () => (
     <div className="menuItemInnerContainer">
+      {console.log(item)}
       {item.photo_id ? (
-        <img
-          className="menuItemImage"
-          src="https://res.cloudinary.com/gonation/gonation.data.prod/rtzoxsdqpogalxyxrzya"
-          alt="menu item"
-        />
+        <img className="menuItemImage" src={item.imageUrl} alt="menu item" />
       ) : (
         <img
           className="menuItemDefaultImage"
