@@ -78,7 +78,7 @@ const Layout = ({ children }) => {
               <Hamburger fill="#fff" width="40px" />
             )}
           </div>
-          <div className="cta-box">
+          <Link className="cta-box">
             <span className="is-hidden-desktop">
               <Beer fill="#fff" width="30px" />
             </span>
@@ -86,7 +86,7 @@ const Layout = ({ children }) => {
               <Beer fill="#fff" width="45px" />
             </span>
             <span className="is-uppercase">Reserve</span>
-          </div>
+          </Link>
         </div>
       </header>
       <div

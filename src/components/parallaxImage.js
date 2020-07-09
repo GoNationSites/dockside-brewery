@@ -12,7 +12,7 @@ const ParallaxImage = () => (
         "https://res.cloudinary.com/gonation/image/upload/v1594256851/sites/dockside-brewing/parallax.jpg",
         2000)
       ,
-        amount: 0.9,
+        amount: 1,
       },
     ]}
     style={{
