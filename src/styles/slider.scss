@@ -1,4 +1,5 @@
-.each-slide > div {
+.each-slide > div,
+.react-slideshow-zoom-wrapper .zoom-wrapper>div {
   display: flex;
   align-items: center;
   justify-content: center;
