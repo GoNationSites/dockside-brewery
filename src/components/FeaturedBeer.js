@@ -29,11 +29,17 @@ const FeaturedBeer = () => {
           <h3 className="title">Draft Of The Week</h3>
           <h2 className="title title__beer-title">{name}</h2>
           <p>{desc}</p>
+          <Link className="button is-hidden-touch">
+            View All Beers{" "}
+            <span>
+              <Hops fill="#fff" width="40px" />
+            </span>
+          </Link>
         </div>
         <div className="column">
           <img src={cloudinaryOptimize(imageUrl, "800")} alt={name} />
-          <div class="has-text-centered section pb-0">
-            <Link className="button">
+          <div className="has-text-centered section pb-0">
+            <Link className="button is-hidden-desktop">
               View All Beers{" "}
               <span>
                 <Hops fill="#fff" width="20px" />
