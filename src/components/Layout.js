@@ -27,13 +27,13 @@ const Layout = ({children}) => {
               )}
             </div>
             <div className="cta-box">
-              <span>Reserve</span>
+              <span className="is-uppercase">Reserve</span>
               <Beer fill="#fff" width="30px" />
             </div>
           </div>
         </header>
         <div
-          className={`navigation-wrapper ${
+          className={`is-hidden-desktop navigation-wrapper ${
             navIsOpen ? "" : "is-hidden-mobile"
           }`}
         >

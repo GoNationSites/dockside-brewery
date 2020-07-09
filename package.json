@@ -14,15 +14,19 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "dependencies": {
+    "axios": "^0.19.2",
+    "axios-jsonp": "^1.0.4",
     "breakpoint-sass": "^2.7.1",
     "bulma": "^0.9.0",
     "gatsby": "^2.23.12",
     "gatsby-plugin-react-helmet": "^3.3.9",
     "gatsby-plugin-sass": "^2.3.10",
+    "moment": "^2.27.0",
     "node-sass": "^4.14.1",
-    "react": "^16.12.0",
+    "react": "^16.8.0",
     "react-dom": "^16.12.0",
     "react-helmet": "^6.1.0",
+    "react-scroll-parallax": "^2.3.3",
     "react-slideshow-image": "^2.0.1"
   },
   "devDependencies": {
