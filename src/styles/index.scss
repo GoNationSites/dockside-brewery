@@ -7,9 +7,13 @@
 @import './navigation.scss';
 @import './slider.scss';
 @import './homepage.scss';
+@import "menus.scss";
+@import "contact.scss";
 
 
 html, body {
     font-family: 'Rubik', sans-serif;
     overflow-x: hidden;
 }
+
+
