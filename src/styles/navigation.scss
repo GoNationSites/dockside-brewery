@@ -56,6 +56,7 @@ header {
 .header-right {
     display: flex;
     width: 150px;
+    height: 90px;
     @include breakpoint($desktop) {
         align-items: center;
         width: auto;
