@@ -9,7 +9,7 @@ import Footer from "./Footer"
 import DesktopShoutBanner from './DesktopShoutBanner'
 import "../styles/index.scss"
 
-const Layout = ({ children }) => {
+const Layout = ({ children, data }) => {
   const [navIsOpen, setNavIsOpen] = useState(false)
    const [navBackground, setNavBackground] = useState(false)
    const navRef = useRef()
@@ -139,7 +139,7 @@ const Layout = ({ children }) => {
       </div>
 
       {children}
-      <Footer />
+      <Footer data={data} />
     </main>
   )
 }

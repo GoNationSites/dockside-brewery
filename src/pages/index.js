@@ -33,7 +33,6 @@ export default function Index({data}) {
       adapter: jsonpAdapter,
     }).then(res => {
       const cloudinaryID = res.data.shout.image.image.cloudinaryId
-      console.log(res.data.shout.image.image.cloudinaryId)
       if (res.data.shout.poweredImageStyle === "background") {
         setShoutBG(getShoutImage(cloudinaryID))
       }
@@ -54,7 +53,7 @@ export default function Index({data}) {
   }
 
   return (
-    <Layout>
+    <Layout data={siteData}>
       <ParallaxProvider>
         <div className="is-hidden-desktop">
           <Slider />

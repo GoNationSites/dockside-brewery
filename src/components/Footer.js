@@ -1,5 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
+import getGoogleStr from '../helpers/getGoogleStr'
+import formatAddress from '../helpers/formatAddress'
 import Compass from "./compass"
 import Table from "./table"
 import Phone from "./phone"
@@ -10,7 +12,7 @@ import Instagram from './instagram'
 import Logo from '../../public/footer-logo.png'
 import DesktopLogo from "../../public/desktop-footer-logo.png"
 
-const Footer = () => {
+const Footer = ({data}) => {
   return (
     <footer>
       <div className="footer-details">
@@ -18,12 +20,29 @@ const Footer = () => {
           <div className="column has-text-centered">
             <Phone />
             <h5 className="subtitle">Call Us</h5>
-            <p>Some text here</p>
+            <a href={`tel: ${data.phone}`}>{data.phone}</a>
           </div>
           <div className="column has-text-centered">
             <Compass />
             <h5 className="subtitle">Visit Us</h5>
-            <p>Some text here</p>
+            <a
+              target="_blank"
+              rel="noopener"
+              href={getGoogleStr(
+                data.name,
+                data.street,
+                data.city,
+                data.zip,
+                data.state
+              )}
+            >
+              {formatAddress(
+                data.state,
+                data.street,
+                data.city,
+                data.zip
+              )}
+            </a>
           </div>
           <div className="column has-text-centered">
             <Table />
