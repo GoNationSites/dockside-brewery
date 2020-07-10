@@ -73,6 +73,12 @@ const Slider = () => {
                 <img key={index} style={{ width: "100%" }} src={each} />
               ))}
             </Zoom>
+            <div className="hero-text-container">
+              <h1 className="title has-text-centered has-text-white">
+                independent craft brewery, restaurant and waterfront biergarten
+              </h1>
+              <Link>Become a Dockside insider</Link>
+            </div>
           </>
         )}
       </div>
