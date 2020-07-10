@@ -14,7 +14,8 @@ exports.sourceNodes = async ({ actions, createNodeId, createContentDigest }) => 
     return data
   }
 
-  const data = await getMetaData(bizID)
+  let data = await getMetaData(bizID)
+  data.bizID = bizID
 
   const nodeContent = JSON.stringify(data.data)
 
@@ -23,7 +24,7 @@ exports.sourceNodes = async ({ actions, createNodeId, createContentDigest }) => 
     parent: null,
     children: [],
     internal: {
-      type: `SiteMetaData`,
+      type: `siteMetaData`,
       mediaType: `text/html`,
       content: nodeContent,
       contentDigest: createContentDigest(data.data),

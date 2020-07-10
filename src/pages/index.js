@@ -1,5 +1,5 @@
-import React, {useState, useEffect} from "react"
-import {Link} from 'gatsby'
+import React, { useState, useEffect } from "react"
+import { Link } from "gatsby"
 import axios from "axios"
 import moment from "moment"
 import { ParallaxProvider } from "react-scroll-parallax"
@@ -11,42 +11,48 @@ import Hops from "../components/hops"
 import Beer from "../components/beer"
 import FeaturedBeer from "../components/FeaturedBeer"
 import MenuShowcase from "../components/MenuShowcase"
-import ParallaxImage from '../components/parallaxImage'
-import EventsShowcase from '../components/EventsShowcase'
-import Facebook from '../components/facebook'
-import Instagram from '../components/instagram'
-import Twitter from '../components/twitter'
+import ParallaxImage from "../components/parallaxImage"
+import EventsShowcase from "../components/EventsShowcase"
+import Facebook from "../components/facebook"
+import Instagram from "../components/instagram"
+import Twitter from "../components/twitter"
+import formatAddress from '../helpers/formatAddress'
+import getGoogleStr from "../helpers/getGoogleStr"
 let jsonpAdapter = require("axios-jsonp")
 
-export default function Index() {
-   const [shoutBG, setShoutBG] = useState(null)
-   useEffect(() => {
-     const shoutURL =
-       "https://data.prod.gonation.com/profile/shoutsnew/bzn-yO3xgUsKQCS7GWg0Q2ewbQ"
-     axios({
-       url: shoutURL,
-       adapter: jsonpAdapter,
-     }).then(res => {
-       const cloudinaryID = res.data.shout.image.image.cloudinaryId
-       console.log(res.data.shout.image.image.cloudinaryId)
-       if (res.data.shout.poweredImageStyle === "background") {
-         setShoutBG(getShoutImage(cloudinaryID))
-       }
-       console.log(res.data)
-     })
-   }, [])
+export default function Index({data}) {
+  const siteData = data.siteMetaData.data
+  const bizID = data.siteMetaData.bizID
+  
+  const [shoutBG, setShoutBG] = useState(null)
+  useEffect(() => {
+    const shoutURL =
+      `https://data.prod.gonation.com/profile/shoutsnew/${bizID}`
+    axios({
+      url: shoutURL,
+      adapter: jsonpAdapter,
+    }).then(res => {
+      const cloudinaryID = res.data.shout.image.image.cloudinaryId
+      console.log(res.data.shout.image.image.cloudinaryId)
+      if (res.data.shout.poweredImageStyle === "background") {
+        setShoutBG(getShoutImage(cloudinaryID))
+      }
+      console.log(res.data)
+    })
+  }, [])
 
-   const getShoutImage = img => {
-     return `https://res.cloudinary.com/gonation/w_2000/${img}`
-   }
+  const getShoutImage = img => {
+    return `https://res.cloudinary.com/gonation/w_2000/${img}`
+  }
 
-   const getShoutBGStyle = () => {
-     return {
-       background: `url(${shoutBG})`,
-       backgroundSize: "cover",
-       zIndex: "0",
-     }
-   }
+  const getShoutBGStyle = () => {
+    return {
+      background: `url(${shoutBG})`,
+      backgroundSize: "cover",
+      zIndex: "0",
+    }
+  }
+
   return (
     <Layout>
       <ParallaxProvider>
@@ -111,30 +117,32 @@ export default function Index() {
           <div class="hero-footer-wrapper">
             <div className="hero-footer-wrapper__left">
               <div>
-                <Link>Address goes here: </Link>
+            <a target="_blank" rel="noopener" href={getGoogleStr(siteData.name, siteData.street, siteData.city, siteData.zip, siteData.state)}>Address: {formatAddress(siteData.state,siteData.street,siteData.city,siteData.zip)}</a>
               </div>
               <div>
-                <Link>Phone: 203-555-5555 </Link>
+                <a href={`tel:${siteData.phone}`}>Phone: {siteData.phone} </a>
               </div>
               <div>
-                <Link class="special">Join The Mug Club <Beer width="30px" fill="#fff" /> </Link>
+                <Link class="special">
+                  Join The Mug Club <Beer width="30px" fill="#fff" />{" "}
+                </Link>
               </div>
             </div>
             <div className="her-footer-wrapper__left">
               <div className="social-icons">
                 <div>
                   <a href="">
-                    <Facebook fill="#fff" width="30px"/>
+                    <Facebook fill="#fff" width="30px" />
                   </a>
                 </div>
                 <div>
                   <a href="">
-                    <Instagram fill="#fff" width="30px"/>
+                    <Instagram fill="#fff" width="30px" />
                   </a>
                 </div>
                 <div>
                   <a href="">
-                    <Twitter fill="#fff" width="30px"/>
+                    <Twitter fill="#fff" width="30px" />
                   </a>
                 </div>
               </div>
@@ -188,3 +196,69 @@ export default function Index() {
     </Layout>
   )
 }
+
+export const query = graphql`
+  {
+    siteMetaData {
+      data {
+        avatar {
+          imageBaseUrl
+        }
+        city
+        desc
+        cover {
+          imageBaseUrl
+        }
+        hours {
+          fri {
+            close
+            open
+          }
+          mon {
+            close
+            open
+          }
+          sat {
+            close
+            open
+          }
+          sun {
+            close
+            open
+          }
+          thu {
+            close
+            open
+          }
+          tue {
+            close
+            open
+          }
+          wed {
+            close
+            open
+          }
+        }
+        lastPricelistUpdate {
+          sec
+          usec
+        }
+        links {
+          facebook
+          instagram
+          twitter
+          website
+          youtube
+        }
+        loc
+        slug
+        name
+        phone
+        state
+        street
+        zip
+      }
+      bizID
+    }
+  }
+`
