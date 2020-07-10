@@ -3,7 +3,7 @@ import React from 'react';
 const Hero = ({pageTitle}) => {
 
     const heroStyle = {
-      background: `url(https://res.cloudinary.com/gonation/image/upload/v1594395080/sites/dockside-brewing/food-hero.jpg)`,
+      background: `url(https://res.cloudinary.com/gonation/image/upload/w_2000/v1594395080/sites/dockside-brewing/food-hero.jpg)`,
       width: "100%",
       backgroundPosition: 'center',
       backgroundSize: 'cover'

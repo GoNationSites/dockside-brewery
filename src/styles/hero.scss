@@ -4,6 +4,9 @@
     justify-content: center;
     align-items: flex-end;
     width: 100%;
+    @include breakpoint($desktop) {
+        height: 700px;
+    }
     h1 {
         color: white;
         text-align: center;
