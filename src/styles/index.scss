@@ -17,6 +17,12 @@ body {
   font-family: "Rubik", sans-serif;
   //   overflow-x: hidden;
 }
+@import "./navigation.scss";
+@import "./slider.scss";
+@import "./homepage.scss";
+@import "menus.scss";
+@import "contact.scss";
+@import "hero.scss";
 
 img {
   object-fit: cover;
