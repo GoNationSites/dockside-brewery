@@ -20,16 +20,19 @@ export default function SectionDropdownLink({
       }}
       onClick={onCellClick({ section, inventory })}
     >
-      {arrowActive ? (
-        <span className="arrowcontainer">
-          <Arrow
-            style={{ marginRight: "1rem", width: "1rem", height: "1rem" }}
-          />
-        </span>
-      ) : (
-        ""
-      )}
-      <span>{name}</span>
+      <span>
+        {" "}
+        {arrowActive ? (
+          <span className="arrowcontainer">
+            <Arrow
+              style={{ marginRight: "1rem", width: "1rem", height: "1rem" }}
+            />
+          </span>
+        ) : (
+          ""
+        )}
+        {name}
+      </span>
     </div>
   )
 }

@@ -6,26 +6,26 @@ import Close from "./close"
 import Beer from "./beer"
 import Hops from "./hops"
 import Footer from "./Footer"
-import DesktopShoutBanner from './DesktopShoutBanner'
+import DesktopShoutBanner from "./DesktopShoutBanner"
 import "../styles/index.scss"
 
 const Layout = ({ children, data }) => {
   const [navIsOpen, setNavIsOpen] = useState(false)
-   const [navBackground, setNavBackground] = useState(false)
-   const navRef = useRef()
-   navRef.current = navBackground
-   useEffect(() => {
-     const handleScroll = () => {
-       const show = window.scrollY > 70
-       if (navRef.current !== show) {
-         setNavBackground(show)
-       }
-     }
-     document.addEventListener("scroll", handleScroll)
-     return () => {
-       document.removeEventListener("scroll", handleScroll)
-     }
-   }, [])
+  const [navBackground, setNavBackground] = useState(false)
+  const navRef = useRef()
+  navRef.current = navBackground
+  useEffect(() => {
+    const handleScroll = () => {
+      const show = window.scrollY > 70
+      if (navRef.current !== show) {
+        setNavBackground(show)
+      }
+    }
+    document.addEventListener("scroll", handleScroll)
+    return () => {
+      document.removeEventListener("scroll", handleScroll)
+    }
+  }, [])
 
   return (
     <main>
@@ -139,7 +139,8 @@ const Layout = ({ children, data }) => {
       </div>
 
       {children}
-      <Footer data={data} />
+
+      {/* <Footer data={data} /> */}
     </main>
   )
 }
