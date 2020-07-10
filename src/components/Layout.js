@@ -35,37 +35,41 @@ const Layout = ({ children }) => {
 
       <header className={`${navBackground ? "scrolled" : ""}`}>
         <div className="header-left">
-          <img src={MobileLogo} alt="" />
-          {/* <a className="is-uppercase">Explore</a> */}
+          <Link to="/">
+            <img src={MobileLogo} alt="Dockside Brewing" />
+          </Link>
         </div>
         <div className="header-right">
           <nav className="nav__desktop is-hidden-touch">
             <div className="nav-link">
-              <Link>Home</Link>
+              <Link to="/">Home</Link>
             </div>
             <div className="nav-link">
-              <Link>About</Link>
+              <Link to="/about">About</Link>
             </div>
             <div className="nav-link">
-              <Link>Brewery</Link>
+              <Link to="/brewery">Brewery</Link>
             </div>
             <div className="nav-link">
-              <Link>Food</Link>
+              <Link to="/food">Food</Link>
             </div>
             <div className="nav-link">
-              <Link>Beer</Link>
+              <Link to="/drinks">Drink</Link>
             </div>
             <div className="nav-link">
-              <Link>Events</Link>
+              <Link to="/events">Events</Link>
             </div>
             <div className="nav-link">
-              <Link>Gallery</Link>
+              <Link to="/gallery">Gallery</Link>
             </div>
             <div className="nav-link">
-              <Link>Contact</Link>
+              <Link to="/contact">Contact</Link>
             </div>
             <div className="nav-link">
-              <Link style={{ display: "flex", alignItems: "center" }}>
+              <Link
+                to="/reserve"
+                style={{ display: "flex", alignItems: "center" }}
+              >
                 <Hops width="25px" fill="#fff" />{" "}
                 <span style={{ marginLeft: "10px" }}>Book A Party</span>
               </Link>
@@ -81,7 +85,7 @@ const Layout = ({ children }) => {
               <Hamburger fill="#fff" width="40px" />
             )}
           </div>
-          <Link className="cta-box">
+          <Link to="/reserve" className="cta-box">
             <span className="is-hidden-desktop">
               <Beer fill="#fff" width="30px" />
             </span>
@@ -99,31 +103,34 @@ const Layout = ({ children }) => {
       >
         <nav className={``}>
           <div className="nav-link">
-            <Link>Home</Link>
+            <Link to="/">Home</Link>
           </div>
           <div className="nav-link">
-            <Link>About</Link>
+            <Link to="/about">About</Link>
           </div>
           <div className="nav-link">
-            <Link>Brewery</Link>
+            <Link to="/brewery">Brewery</Link>
           </div>
           <div className="nav-link">
-            <Link>Food</Link>
+            <Link to="/food">Food</Link>
           </div>
           <div className="nav-link">
-            <Link>Beer</Link>
+            <Link to="/drinks">Drink</Link>
           </div>
           <div className="nav-link">
-            <Link>Events</Link>
+            <Link to="/events">Events</Link>
           </div>
           <div className="nav-link">
-            <Link>Gallery</Link>
+            <Link to="/gallery">Gallery</Link>
           </div>
           <div className="nav-link">
-            <Link>Contact</Link>
+            <Link to="/contact">Contact</Link>
           </div>
           <div className="nav-link">
-            <Link style={{ display: "flex", alignItems: "center" }}>
+            <Link
+              to="/reserve"
+              style={{ display: "flex", alignItems: "center" }}
+            >
               <Beer width="30px" fill="#fff" />{" "}
               <span style={{ marginLeft: "10px" }}>Book A Party</span>
             </Link>
