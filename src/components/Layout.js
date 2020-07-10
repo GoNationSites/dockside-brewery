@@ -7,9 +7,10 @@ import Beer from "./beer"
 import Hops from "./hops"
 import Footer from "./Footer"
 import DesktopShoutBanner from './DesktopShoutBanner'
+import Hero from '../components/Hero'
 import "../styles/index.scss"
 
-const Layout = ({ children, data }) => {
+const Layout = ({ children, data, pageTitle }) => {
   const [navIsOpen, setNavIsOpen] = useState(false)
    const [navBackground, setNavBackground] = useState(false)
    const navRef = useRef()
@@ -137,6 +138,9 @@ const Layout = ({ children, data }) => {
           </div>
         </nav>
       </div>
+
+        {pageTitle !== 'home' ? <Hero pageTitle={pageTitle} /> : ''}
+      
 
       {children}
       <Footer data={data} />

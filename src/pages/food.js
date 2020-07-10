@@ -7,9 +7,12 @@ import AllInOnce from "../components/menus/allIn"
 import CellsAndAllIn from "../components/menus/cellsAndAllIn"
 import TabsView from "../components/menus/tabsView"
 
-export default function Food() {
+export default function Food({data}) {
   const [menuData, setMenuData] = useState({})
   const [modalActive, setModalActive] = useState("")
+
+  const siteData = data.siteMetaData.data
+  const bizID = data.siteMetaData.bizID
 
   const id = "bzn-yO3xgUsKQCS7GWg0Q2ewbQ"
 
@@ -52,10 +55,8 @@ export default function Food() {
   }
 
   return (
-    <Layout>
+    <Layout pageTitle="food" data={siteData}>
       <section id="foodmenu">
-        <h1>Menu</h1>
-
         <section className="section section__menu-section">
           {modalActive ? (
             <ItemModal data={modalActive} setModalActive={setModalActive} />
@@ -74,3 +75,70 @@ export default function Food() {
     </Layout>
   )
 }
+
+
+export const query = graphql`
+  {
+    siteMetaData {
+      data {
+        avatar {
+          imageBaseUrl
+        }
+        city
+        desc
+        cover {
+          imageBaseUrl
+        }
+        hours {
+          fri {
+            close
+            open
+          }
+          mon {
+            close
+            open
+          }
+          sat {
+            close
+            open
+          }
+          sun {
+            close
+            open
+          }
+          thu {
+            close
+            open
+          }
+          tue {
+            close
+            open
+          }
+          wed {
+            close
+            open
+          }
+        }
+        lastPricelistUpdate {
+          sec
+          usec
+        }
+        links {
+          facebook
+          instagram
+          twitter
+          website
+          youtube
+        }
+        loc
+        slug
+        name
+        phone
+        state
+        street
+        zip
+      }
+      bizID
+    }
+  }
+`
