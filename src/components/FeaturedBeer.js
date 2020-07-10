@@ -40,10 +40,7 @@ const FeaturedBeer = () => {
           <img src={cloudinaryOptimize(imageUrl, "800")} alt={name} />
           <div className="has-text-centered section pb-0">
             <Link className="button is-hidden-desktop">
-              View All Beers{" "}
-              <span>
-                <Hops fill="#fff" width="20px" />
-              </span>
+              View All Beers
             </Link>
           </div>
         </div>

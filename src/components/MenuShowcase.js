@@ -61,9 +61,6 @@ const MenuShowcase = () => {
           <h4 className="title">
             Dockside <span> Pizza</span>
           </h4>
-          <div className="has-text-centered" style={{ margin: "2rem 0" }}>
-            <Pizza fill="#111" width="100px" />
-          </div>
           <p className="try-title">
             <span>{activeItem && activeItem.name}</span>
           </p>

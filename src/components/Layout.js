@@ -4,6 +4,7 @@ import MobileLogo from "../../public/logo-white.png"
 import Hamburger from "./hamburger"
 import Close from "./close"
 import Beer from "./beer"
+import M41 from "./icons/M41"
 import Hops from "./hops"
 import Footer from "./Footer"
 import DesktopShoutBanner from './DesktopShoutBanner'
@@ -64,6 +65,9 @@ const Layout = ({ children, data, pageTitle }) => {
               <Link to="/gallery">Gallery</Link>
             </div>
             <div className="nav-link">
+              <Link to="/faq">FAQ</Link>
+            </div>
+            <div className="nav-link">
               <Link to="/contact">Contact</Link>
             </div>
             <div className="nav-link">
@@ -71,7 +75,6 @@ const Layout = ({ children, data, pageTitle }) => {
                 to="/reserve"
                 style={{ display: "flex", alignItems: "center" }}
               >
-                <Hops width="25px" fill="#fff" />{" "}
                 <span style={{ marginLeft: "10px" }}>Book A Party</span>
               </Link>
             </div>
@@ -88,12 +91,12 @@ const Layout = ({ children, data, pageTitle }) => {
           </div>
           <Link to="/reserve" className="cta-box">
             <span className="is-hidden-desktop">
-              <Beer fill="#fff" width="30px" />
+              <M41 fill="#fff" width="41px" />
             </span>
             <span className="is-hidden-touch">
-              <Beer fill="#fff" width="45px" />
+              <M41 fill="#fff" width="41px" />
             </span>
-            <span className="is-uppercase">Reserve</span>
+            <span className="is-uppercase">Reserve Table</span>
           </Link>
         </div>
       </header>
@@ -125,6 +128,9 @@ const Layout = ({ children, data, pageTitle }) => {
             <Link to="/gallery">Gallery</Link>
           </div>
           <div className="nav-link">
+            <Link to="/faq">FAQ</Link>
+          </div>
+          <div className="nav-link">
             <Link to="/contact">Contact</Link>
           </div>
           <div className="nav-link">
@@ -132,15 +138,13 @@ const Layout = ({ children, data, pageTitle }) => {
               to="/reserve"
               style={{ display: "flex", alignItems: "center" }}
             >
-              <Beer width="30px" fill="#fff" />{" "}
               <span style={{ marginLeft: "10px" }}>Book A Party</span>
             </Link>
           </div>
         </nav>
       </div>
 
-        {pageTitle !== 'home' ? <Hero pageTitle={pageTitle} /> : ''}
-      
+      {pageTitle !== "home" ? <Hero pageTitle={pageTitle} /> : ""}
 
       {children}
       <Footer data={data} />

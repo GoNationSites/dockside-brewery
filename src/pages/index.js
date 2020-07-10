@@ -123,7 +123,7 @@ export default function Index({data}) {
               </div>
               <div>
                 <Link class="special">
-                  Join The Mug Club <Beer width="30px" fill="#fff" />{" "}
+                  Join The Mug Club 
                 </Link>
               </div>
             </div>

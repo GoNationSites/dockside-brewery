@@ -81,6 +81,8 @@ header {
         span {
             font-size: 12px;
             color: white;
+            font-weight: 700;
+            text-align: center;
             @include breakpoint($desktop) {
                 font-size: 14px;
             }
@@ -88,10 +90,17 @@ header {
     }
 }
 
+@include breakpoint($desktop){
+    .scrolled .header-right .cta-box span {
+        margin-left: 1rem;;
+    }
+}
+
+
 .scrolled .header-right .cta-box {
     flex-direction: row;
     svg {
-        width: 30px!important;
+        width: 50px!important;
     }
 }
 
