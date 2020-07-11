@@ -1,36 +1,185 @@
 @import "./variables.scss";
 
-.contact-details-container {
-  padding: 1rem;
+#contact-page {
+  background: $light;
+  @media (min-width: 1024px) {
+    padding-top: $navHeightDesktop;
+  }
+}
 
+// block 1
+.contact-details-container {
   .contact-details {
     padding: 1rem;
     text-align: center;
+    background-color: $primary;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     .title {
+      margin-top: 1rem;
       font-weight: bold;
       color: $secondary;
     }
 
     .address > * {
+      color: white;
       margin-bottom: 0.25rem;
+      text-align: center;
     }
   }
-  .map-container {
-    width: 100%;
-
-    iframe {
-      width: 100%;
-      height: 40vh;
+  .form-container {
+    padding: 1rem;
+    background-color: white;
+    .title {
+      color: #00567d;
+      text-align: center;
     }
   }
 
   @media (min-width: 767px) {
     display: flex;
-    align-items: center;
+    align-items: stretch;
+    max-width: 1024px;
+    margin: 0 auto;
     .contact-details,
+    .form-container {
+      width: 50%;
+      padding: 1rem;
+      margin: 0;
+    }
+  }
+}
+
+// block 2
+.contact-hours-map {
+  .map-container {
+    width: 100%;
+
+    iframe {
+      width: 100%;
+      min-height: 40vh;
+      height: 100%;
+    }
+  }
+
+  .hours-block {
+    padding: 1rem;
+
+    > * {
+      max-width: 400px;
+      margin: 0 auto;
+    }
+  }
+
+  @media (min-width: 767px) {
+    padding: 2rem 0rem;
+    display: flex;
+    max-width: 1024px;
+    margin: 0 auto;
+
+    .hours-block {
+      padding: 1rem;
+    }
+
+    .hours-block,
     .map-container {
       width: 50%;
-      text-align: left;
     }
+  }
+}
+
+// ===========================
+
+// hours
+
+.hours-block {
+  background: white;
+  .title {
+    color: $primary;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+}
+
+.hours-container {
+  .dayofweekcontainer {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+    .dayofweek {
+      display: inline-block;
+      text-transform: capitalize;
+      &::first-letter {
+        font-size: 150%;
+        color: $secondary;
+      }
+    }
+    .timeblocks {
+      display: inline-block;
+      flex-direction: column;
+      vertical-align: middle;
+      text-align: right;
+      flex-grow: 1;
+
+      .timeblock {
+        display: inline-block;
+        .timelabel {
+        }
+        .time {
+          flex-grow: 1;
+          text-align: right;
+        }
+      }
+      .variants {
+        display: flex;
+      }
+    }
+  }
+}
+
+// social icons
+
+.social-icons-container {
+  margin: 1rem 0 1rem;
+}
+
+// contact form
+
+.contact-form {
+  max-width: 400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  > * {
+    margin-bottom: 1rem;
+    background: none;
+    border: solid 2px $primary;
+    border-radius: 5px;
+    box-shadow: none;
+  }
+  > *:last-child {
+    margin-bottom: 0;
+  }
+  > input {
+    height: 2rem;
+    color: white;
+    &::placeholder {
+      // color: $secondary;
+    }
+  }
+  > textarea {
+    &::placeholder {
+      // color: $secondary;
+    }
+  }
+
+  > button {
+    background: $secondary;
+    padding: 0.75rem;
+    border: none;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
   }
 }

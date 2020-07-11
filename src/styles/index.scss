@@ -4,10 +4,23 @@
 @import '../../node_modules/breakpoint-sass/stylesheets/breakpoint';
 @import '../../node_modules/animate.css/animate.css';
 
+@import "./navigation.scss";
+@import "./slider.scss";
+@import "./homepage.scss";
+@import "./about.scss";
+@import "./menus.scss";
+@import "./beer.scss";
+@import "./private-events.scss";
+@import "./contact.scss";
 
-@import './navigation.scss';
-@import './slider.scss';
-@import './homepage.scss';
+html,
+body {
+  font-family: "Rubik", sans-serif;
+  //   overflow-x: hidden;
+}
+@import "./navigation.scss";
+@import "./slider.scss";
+@import "./homepage.scss";
 @import "menus.scss";
 @import "contact.scss";
 @import "hero.scss";
@@ -67,4 +80,7 @@ img {
   -ms-animation: rotating 4s linear infinite;
   -o-animation: rotating 4s linear infinite;
   animation: rotating 4s linear infinite;
+}
+img {
+  object-fit: cover;
 }

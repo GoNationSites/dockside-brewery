@@ -6,29 +6,29 @@ import Twitter from "../icons/Twitter"
 
 export default function SocialIcons({ instagram, facebook, twitter }) {
   return (
-    <div>
+    <div className="social-icons-container">
       <a href={facebook} target="_blank">
         <Facebook
-          color={"#00567d"} // these colours are currently hard coded outside of theme ui. will need to bring them in as icons instead of svgs.
+          color={"#ffffff"} // these colours are currently hard coded outside of theme ui. will need to bring them in as icons instead of svgs.
           height={"30px"}
           width={"30px"}
-          style={{ margin: "10px" }}
+          style={{ marginRight: "10px" }}
         />
       </a>
       <a href={instagram} target="_blank">
         <Instagram
-          color={"#00567d"} // these colours are currently hard coded outside of theme ui. will need to bring them in as icons instead of svgs.
+          color={"#ffffff"} // these colours are currently hard coded outside of theme ui. will need to bring them in as icons instead of svgs.
           height={"30px"}
           width={"30px"}
-          style={{ margin: "10px" }}
+          style={{ marginRight: "10px" }}
         />
       </a>
       <a href={twitter} target="_blank">
         <Twitter
-          color={"#00567d"} // these colours are currently hard coded outside of theme ui. will need to bring them in as icons instead of svgs.
+          color={"#ffffff"} // these colours are currently hard coded outside of theme ui. will need to bring them in as icons instead of svgs.
           height={"30px"}
           width={"30px"}
-          style={{ margin: "10px" }}
+          style={{ marginRight: "10px" }}
         />
       </a>
     </div>

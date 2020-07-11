@@ -124,25 +124,28 @@ const Hours = ({ hours }) => {
   }
 
   return (
-    <div variant="hours.container">
-      <h2 variant="footer.heading">Hours</h2>
-      {formattedHours.map((hourBlock, idx) => (
-        <div sx={{ marginBottom: 3 }} key={`${idx}-${Object.keys(hourBlock)}`}>
-          <p variant="hours.labelHeading">{Object.keys(hourBlock)}</p>
+    <div className="hours-block">
+      <h2 className="title">Hours</h2>
 
-          {hourBlock[Object.keys(hourBlock)].map((el, idx) => (
-            <div key={`${el.open} - ${idx}`}>
-              <div variant="hours.hoursEntry">
-                <div variant="hours.dayLabel">{formatDays(el.days)}</div>
+      <div>
+        {formattedHours.map((hourBlock, idx) => (
+          <div key={`${idx}-${Object.keys(hourBlock)}`}>
+            <p>{Object.keys(hourBlock)}</p>
 
-                <div variant="hours.timelabel">
-                  {formatTime(el.open)} - {formatTime(el.close)}
+            {hourBlock[Object.keys(hourBlock)].map((el, idx) => (
+              <div key={`${el.open} - ${idx}`}>
+                <div>
+                  <div>{formatDays(el.days)}</div>
+
+                  <div>
+                    {formatTime(el.open)} - {formatTime(el.close)}
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
-        </div>
-      ))}
+            ))}
+          </div>
+        ))}
+      </div>
     </div>
   )
 }

@@ -5,8 +5,8 @@ import LogoMobile from '../assets/logo-girl.png'
 import LogoGirl from '../assets/white-logo-girl.png'
 import M41 from "./icons/M41"
 import Footer from "./Footer"
-import DesktopShoutBanner from './DesktopShoutBanner'
-import Hero from '../components/Hero'
+import DesktopShoutBanner from "./DesktopShoutBanner"
+import Hero from "../components/Hero"
 import "../styles/index.scss"
 
 const Layout = ({ children, data, pageTitle, navIsOpen }) => {
@@ -150,6 +150,7 @@ const Layout = ({ children, data, pageTitle, navIsOpen }) => {
       {pageTitle !== "home" ? <Hero pageTitle={pageTitle} /> : ""}
 
       {children}
+
       <Footer data={data} />
     </main>
   )

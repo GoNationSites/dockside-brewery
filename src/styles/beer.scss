@@ -1,0 +1,9 @@
+#beer-page {
+  .content {
+    max-width: 767px;
+    margin: 0 auto;
+    @media (min-width: 767px) {
+      text-align: center;
+    }
+  }
+}

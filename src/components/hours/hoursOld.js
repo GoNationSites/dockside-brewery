@@ -22,117 +22,66 @@ export default function hours({ hours }) {
 
   const renderHours = day =>
     day.map(timeBlock => {
+      const labeltest = ""
       return (
-        <Flex key={"id" + Math.random().toString(16).slice(2)}>
+        <div
+          style={
+            day.length > 1 || (day.length === 1 && timeBlock.label)
+              ? { display: "flex", width: "100%" }
+              : {}
+          }
+          className="timeblocks"
+          key={"id" + Math.random().toString(16).slice(2)}
+        >
           {/* if the business is closed render this */}
-          {timeBlock.isClosed ? (
-            <Text
-              variant="light"
-              sx={{
-                flexGrow: "1",
-                marginBottom: 0,
-                fontSize: 1,
-                textAlign: "right",
-              }}
-            >
-              Closed
-            </Text>
-          ) : null}
+          {timeBlock.isClosed ? <span>Closed</span> : null}
 
           {/* if open is true. render open 24 hours */}
-          {timeBlock.isOpen ? (
-            <Text
-              variant="light"
-              sx={{
-                flexGrow: "1",
-                marginBottom: 0,
-                fontSize: 1,
-                textAlign: "right",
-              }}
-            >
-              Open 24 Hours
-            </Text>
-          ) : null}
+          {timeBlock.isOpen ? <span>Open 24 Hours</span> : null}
 
           {/* anything else render all hours and labels */}
           {!timeBlock.isOpen && !timeBlock.isClosed ? (
-            <Flex
-              sx={{
-                width: "100%",
-                flexDirection: ["row", "row", "row"],
-                marginBottom: 0,
-              }}
+            <div
+              className={`timeblock ${
+                day.length > 1 || (day.length === 1 && timeBlock.label)
+                  ? "variants"
+                  : ""
+              }`}
             >
-              <Text
-                variant="light"
-                sx={{ flexGrow: "1", marginBottom: 0, fontSize: 1 }}
-              >
-                {timeBlock.label}
-              </Text>
-              <Text
-                variant="light"
-                sx={{
-                  textAlign: "right",
-                  marginBottom: 0,
-                  fontSize: 1,
-                }}
-              >
+              {timeBlock.label ? (
+                <span className="timelabel">
+                  {timeBlock.label}
+                  {timeBlock.label}
+                </span>
+              ) : (
+                ""
+              )}
+              <span className="time">
                 {moment(timeBlock.open, "h:mm a").format("h:mm a")}-
                 {moment(timeBlock.close, "h:mm a").format("h:mm a")}
-              </Text>
-            </Flex>
+              </span>
+            </div>
           ) : (
             ""
           )}
-        </Flex>
+        </div>
       )
     })
 
   return (
-    <Box sx={{ maxWidth: "300px", width: "100%" }}>
+    <div className="hours-block">
       {console.log(hours)}
-      <Text
-        variant="h2"
-        sx={{
-          textAlign: ["center", "center", "left"],
-          marginBottom: 2,
-          color: "light",
-        }}
-      >
-        {" "}
-        Our Hours
-      </Text>
-      <Flex
-        sx={{
-          flexDirection: ["column"],
-          justifyContent: "space-between",
-        }}
-      >
+      <h3 className="title">Our Hours</h3>
+      <div className="hours-container">
         {daysOfWeek.map((day, index) => {
           return (
-            <Box
-              key={index}
-              sx={{
-                padding: 1,
-                textAlign: ["left", "left", "left"],
-                marginBottom: 2,
-              }}
-            >
-              <Text
-                variant="headingLight"
-                sx={{
-                  marginBottom: 1,
-                  textTransform: "uppercase",
-                  fontSize: 2,
-                }}
-              >
-                {dayOfTheWeekText[index]}
-              </Text>
+            <div className="dayofweekcontainer">
+              <p className="dayofweek">{dayOfTheWeekText[index]}</p>
               {renderHours(day)}
-            </Box>
+            </div>
           )
         })}
-      </Flex>
-    </Box>
+      </div>
+    </div>
   )
 }

@@ -1,18 +1,18 @@
 import React from "react"
 import { Link } from "gatsby"
-import getGoogleStr from '../helpers/getGoogleStr'
-import formatAddress from '../helpers/formatAddress'
+import getGoogleStr from "../helpers/getGoogleStr"
+import formatAddress from "../helpers/formatAddress"
 import Compass from "./compass"
 import Table from "./table"
 import Phone from "./phone"
 import Beer from "./beer"
-import Twitter from './twitter'
-import Facebook from './facebook'
-import Instagram from './instagram'
-import Logo from '../assets/dockside-blue.png'
+import Twitter from "./twitter"
+import Facebook from "./facebook"
+import Instagram from "./instagram"
+import Logo from "../../public/footer-logo.png"
 import DesktopLogo from "../../public/desktop-footer-logo.png"
 
-const Footer = ({data}) => {
+const Footer = ({ data }) => {
   return (
     <footer>
       <div className="footer-details">
