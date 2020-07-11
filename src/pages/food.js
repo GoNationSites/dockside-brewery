@@ -1,10 +1,13 @@
-import React from "react"
+import React, {useState} from "react"
 import Layout from "../components/Layout"
 import Menu from "../components/menus/Menu"
 
-export default function Food() {
+export default function Food({data}) {
+  const [navIsOpen, setNavIsOpen] = useState(false)
+  const siteData = data.siteMetaData.data
+  const bizID = data.siteMetaData.bizID
   return (
-    <Layout>
+    <Layout pageTitle="home" data={siteData} navIsOpen={navIsOpen}>
       <section id="food-page">
         <Menu poweredListID={"powered-list-4"} mode={"cellsThenAllInOnce"} />
       </section>
