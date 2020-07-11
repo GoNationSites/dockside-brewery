@@ -3,7 +3,9 @@ import Layout from "../components/Layout"
 import EventForm from "../components/forms/EventsForm"
 import Menu from "../components/menus/Menu"
 import PDFMenu from "../assets/PDFs/DocksidePartyOptions.pdf"
-export default function PrivateEvents() {
+export default function PrivateEvents({data}) {
+  const siteData = data.siteMetaData.data
+  const bizID = data.siteMetaData.bizID
   return (
     <Layout>
       <section id="beer-page">
@@ -24,3 +26,69 @@ export default function PrivateEvents() {
     </Layout>
   )
 }
+
+export const query = graphql`
+  {
+    siteMetaData {
+      data {
+        avatar {
+          imageBaseUrl
+        }
+        city
+        desc
+        cover {
+          imageBaseUrl
+        }
+        hours {
+          fri {
+            close
+            open
+          }
+          mon {
+            close
+            open
+          }
+          sat {
+            close
+            open
+          }
+          sun {
+            close
+            open
+          }
+          thu {
+            close
+            open
+          }
+          tue {
+            close
+            open
+          }
+          wed {
+            close
+            open
+          }
+        }
+        lastPricelistUpdate {
+          sec
+          usec
+        }
+        links {
+          facebook
+          instagram
+          twitter
+          website
+          youtube
+        }
+        loc
+        slug
+        name
+        phone
+        state
+        street
+        zip
+      }
+      bizID
+    }
+  }
+`

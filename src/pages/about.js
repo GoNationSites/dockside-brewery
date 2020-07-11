@@ -4,7 +4,10 @@ import axios from "axios"
 import jsonpAdapter from "axios-jsonp"
 import AboutHeroImage from "../assets/about-hero.jpg"
 import AboutImage from "../assets/about-image.jpg"
-export default function About() {
+export default function About({data}) {
+  const [navIsOpen, setNavIsOpen] = useState(false)
+  const siteData = data.siteMetaData.data
+  const bizID = data.siteMetaData.bizID
   const [aboutData, setAboutData] = useState({
     aboutData: null,
     isLoading: true,
@@ -26,7 +29,8 @@ export default function About() {
   }, [])
 
   return (
-    <Layout>
+    <Layout pageTitle="about" data={siteData} navIsOpen={navIsOpen}>
+      
       <section id="about-page">
         <div className="hero-image">
           <img src={AboutHeroImage}></img>
@@ -51,3 +55,69 @@ export default function About() {
     </Layout>
   )
 }
+
+export const query = graphql`
+  {
+    siteMetaData {
+      data {
+        avatar {
+          imageBaseUrl
+        }
+        city
+        desc
+        cover {
+          imageBaseUrl
+        }
+        hours {
+          fri {
+            close
+            open
+          }
+          mon {
+            close
+            open
+          }
+          sat {
+            close
+            open
+          }
+          sun {
+            close
+            open
+          }
+          thu {
+            close
+            open
+          }
+          tue {
+            close
+            open
+          }
+          wed {
+            close
+            open
+          }
+        }
+        lastPricelistUpdate {
+          sec
+          usec
+        }
+        links {
+          facebook
+          instagram
+          twitter
+          website
+          youtube
+        }
+        loc
+        slug
+        name
+        phone
+        state
+        street
+        zip
+      }
+      bizID
+    }
+  }
+`
