@@ -9,7 +9,7 @@ import Beer from "./beer"
 import Twitter from './twitter'
 import Facebook from './facebook'
 import Instagram from './instagram'
-import Logo from '../../public/footer-logo.png'
+import Logo from '../assets/dockside-blue.png'
 import DesktopLogo from "../../public/desktop-footer-logo.png"
 
 const Footer = ({data}) => {
@@ -36,12 +36,7 @@ const Footer = ({data}) => {
                 data.state
               )}
             >
-              {formatAddress(
-                data.state,
-                data.street,
-                data.city,
-                data.zip
-              )}
+              {formatAddress(data.state, data.street, data.city, data.zip)}
             </a>
           </div>
           <div className="column has-text-centered">
@@ -87,7 +82,16 @@ const Footer = ({data}) => {
           </Link>
         </div>
       </div>
-      <h3 className="has-text-centered title social-title">Connect</h3>
+
+      <div className="footer-logo">
+        <span className="is-hidden-desktop">
+          <img src={Logo} alt="Dockside" />
+        </span>
+        <span className="is-hidden-touch">
+          <img src={DesktopLogo} alt="Dockside" />
+        </span>
+      </div>
+      <h3 className="has-text-centered title social-title">Let's get social</h3>
       <div className="footer-social">
         <div>
           <Facebook width="20px" />
@@ -98,14 +102,6 @@ const Footer = ({data}) => {
         <div>
           <Twitter width="20px" />
         </div>
-      </div>
-      <div className="footer-logo">
-        <span className="is-hidden-desktop">
-          <img src={Logo} alt="Dockside" />
-        </span>
-        <span className="is-hidden-touch">
-          <img src={DesktopLogo} alt="Dockside" />
-        </span>
       </div>
       <div className="gonation">
         <img

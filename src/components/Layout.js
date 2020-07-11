@@ -1,19 +1,17 @@
 import React, { useState, useEffect, useRef } from "react"
 import { Link } from "gatsby"
 import MobileLogo from "../../public/logo-white.png"
-import Hamburger from "./hamburger"
-import Close from "./close"
-import Beer from "./beer"
+import LogoMobile from '../assets/logo-girl.png'
+import LogoGirl from '../assets/white-logo-girl.png'
 import M41 from "./icons/M41"
-import Hops from "./hops"
 import Footer from "./Footer"
 import DesktopShoutBanner from './DesktopShoutBanner'
 import Hero from '../components/Hero'
 import "../styles/index.scss"
 
-const Layout = ({ children, data, pageTitle }) => {
-  const [navIsOpen, setNavIsOpen] = useState(false)
-   const [navBackground, setNavBackground] = useState(false)
+const Layout = ({ children, data, pageTitle, navIsOpen }) => {
+  const [navBackground, setNavBackground] = useState(false)
+  // const [navIsOpen, setNavIsOpen] = useState(false)
    const navRef = useRef()
    navRef.current = navBackground
    useEffect(() => {
@@ -37,9 +35,21 @@ const Layout = ({ children, data, pageTitle }) => {
 
       <header className={`${navBackground ? "scrolled" : ""}`}>
         <div className="header-left">
-          <Link to="/">
-            <img src={MobileLogo} alt="Dockside Brewing" />
+          <span className="is-hidden-touch">
+            <Link to="/">
+              <img src={MobileLogo} alt="Dockside Brewing" />
+            </Link>
+          </span>
+
+          {/* <span className="is-hidden-desktop"> */}
+          <Link
+            to="/"
+            className="is-hidden-desktop"
+            style={{ display: "flex" }}
+          >
+            <img src={LogoMobile} alt="Dockside Brewing" />
           </Link>
+          {/* </span> */}
         </div>
         <div className="header-right">
           <nav className="nav__desktop is-hidden-touch">
@@ -75,27 +85,17 @@ const Layout = ({ children, data, pageTitle }) => {
                 to="/reserve"
                 style={{ display: "flex", alignItems: "center" }}
               >
-                <span style={{ marginLeft: "10px" }}>Book A Party</span>
+                <span>Book A Party</span>
               </Link>
             </div>
           </nav>
-          <div
-            className="hamburger-box is-hidden-desktop"
-            onClick={() => setNavIsOpen(!navIsOpen)}
-          >
-            {navIsOpen ? (
-              <Close width="30px" fill="#fff" />
-            ) : (
-              <Hamburger fill="#fff" width="40px" />
-            )}
-          </div>
           <Link to="/reserve" className="cta-box">
-            <span className="is-hidden-desktop">
+            {/* <span className="is-hidden-desktop">
               <M41 fill="#fff" width="41px" />
             </span>
             <span className="is-hidden-touch">
               <M41 fill="#fff" width="41px" />
-            </span>
+            </span> */}
             <span className="is-uppercase">Reserve Table</span>
           </Link>
         </div>
@@ -138,8 +138,11 @@ const Layout = ({ children, data, pageTitle }) => {
               to="/reserve"
               style={{ display: "flex", alignItems: "center" }}
             >
-              <span style={{ marginLeft: "10px" }}>Book A Party</span>
+              <span>Book A Party</span>
             </Link>
+          </div>
+          <div className="mobile-nav-logo">
+            <img src={LogoGirl} alt="Dockside Brewing logo girl" />
           </div>
         </nav>
       </div>

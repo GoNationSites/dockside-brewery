@@ -26,7 +26,8 @@ const MenuShowcase = () => {
 
   const renderShowcase = () => {
     return (
-      <div className="column is-5 is-marginless is-paddingless">
+      <div className="column column__menu-showcase is-5 is-marginless is-paddingless">
+        <h3 className="title">New Haven classic brick oven pizza</h3>
         <div className="active-image">
           <img
             src={cloudinaryOptimize(activeItem.imageUrl, '1200')}
@@ -54,17 +55,21 @@ const MenuShowcase = () => {
 
   return (
     <div className="columns is-marginless">
-      {" "}
       {pizzaData && activeItem && renderShowcase()}
       <div className="column">
-        <div className="section container__pizza">
-          <h4 className="title">
+        <div className="container__pizza">
+          {/* <h4 className="title">
             Dockside <span> Pizza</span>
-          </h4>
+          </h4> */}
           <p className="try-title">
             <span>{activeItem && activeItem.name}</span>
           </p>
-          <p className="try-desc">{activeItem && activeItem.desc} <Link>Read More</Link> </p>
+          <p className="try-desc">{activeItem && activeItem.desc} </p>
+          <div className="has-text-centered">
+            <Link to="/" className="button">
+              View Menu
+            </Link>
+          </div>
         </div>
       </div>
     </div>

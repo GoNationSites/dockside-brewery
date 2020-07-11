@@ -9,6 +9,8 @@ import Slider from "../components/slider"
 import Shout from "../components/shout"
 import Hops from "../components/hops"
 import Beer from "../components/beer"
+import Hamburger from '../components/hamburger'
+import Close from "../components/close"
 import FeaturedBeer from "../components/FeaturedBeer"
 import MenuShowcase from "../components/MenuShowcase"
 import ParallaxImage from "../components/parallaxImage"
@@ -21,6 +23,7 @@ import getGoogleStr from "../helpers/getGoogleStr"
 let jsonpAdapter = require("axios-jsonp")
 
 export default function Index({data}) {
+  const [navIsOpen, setNavIsOpen] = useState(false)
   const siteData = data.siteMetaData.data
   const bizID = data.siteMetaData.bizID
   
@@ -53,7 +56,7 @@ export default function Index({data}) {
   }
 
   return (
-    <Layout pageTitle="home" data={siteData}>
+    <Layout pageTitle="home" data={siteData} navIsOpen={navIsOpen}>
       <ParallaxProvider>
         <div className="is-hidden-desktop">
           <Slider />
@@ -91,7 +94,7 @@ export default function Index({data}) {
         </div>
 
         <section className="section section-call-dir is-hidden-desktop">
-          <div className="columns is-mobile is-hidden-tablet">
+          <div className="columns is-mobile is-hidden-tablet is-vcentered">
             <div className="column has-text-centered">
               <a>Call</a>
             </div>
@@ -99,14 +102,28 @@ export default function Index({data}) {
               <a>Directions</a>
             </div>
             <div className="column has-text-centered">
-              <a>Book a table</a>
+              <a>Reserve</a>
             </div>
+            <div className="column has-text-centered column__center">
+              
+                <div
+                  className="hamburger-box is-hidden-desktop"
+                  onClick={() => setNavIsOpen(!navIsOpen)}
+                >
+                  {navIsOpen ? (
+                    <Close width="20px" fill="#fff" />
+                  ) : (
+                    <Hamburger fill="#fff" width="20px" />
+                  )}
+                </div>
+              </div>
+            
           </div>
         </section>
         <section className="section section-shout is-hidden-desktop">
-          <div className="shout-logo">
+          {/* <div className="shout-logo">
             <img src={logo} alt="Dockside Brewery" />
-          </div>
+          </div> */}
           <div className="hops-bg">
             <Hops fill="#efbf3e17" />
           </div>
@@ -116,15 +133,31 @@ export default function Index({data}) {
           <div class="hero-footer-wrapper">
             <div className="hero-footer-wrapper__left">
               <div>
-            <a target="_blank" rel="noopener" href={getGoogleStr(siteData.name, siteData.street, siteData.city, siteData.zip, siteData.state)}>Address: {formatAddress(siteData.state,siteData.street,siteData.city,siteData.zip)}</a>
+                <a
+                  target="_blank"
+                  rel="noopener"
+                  href={getGoogleStr(
+                    siteData.name,
+                    siteData.street,
+                    siteData.city,
+                    siteData.zip,
+                    siteData.state
+                  )}
+                >
+                  Address:{" "}
+                  {formatAddress(
+                    siteData.state,
+                    siteData.street,
+                    siteData.city,
+                    siteData.zip
+                  )}
+                </a>
               </div>
               <div>
                 <a href={`tel:${siteData.phone}`}>Phone: {siteData.phone} </a>
               </div>
               <div>
-                <Link class="special">
-                  Join The Mug Club 
-                </Link>
+                <Link class="special">Join The Mug Club</Link>
               </div>
             </div>
             <div className="her-footer-wrapper__left">
@@ -150,7 +183,7 @@ export default function Index({data}) {
         </section>
         <section className=" section-curbside">
           <div className="columns is-paddingless is-marginless">
-            <div className="column section">
+            <div className="column column__curbside section">
               <h3 className="title">FOR CURBSIDE PICKUP, PLEASE:</h3>
               <ul>
                 <li>

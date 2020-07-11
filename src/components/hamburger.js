@@ -2,15 +2,21 @@ import React from 'react';
 
 const hamburger = ({fill, width}) => {
     return (
-    <svg width={width}  x="0px" y="0px"
-	 viewBox="0 0 512 512"  >
-		<path fill={fill}  d="M492,236H20c-11.046,0-20,8.954-20,20c0,11.046,8.954,20,20,20h472c11.046,0,20-8.954,20-20S503.046,236,492,236z"/>
-		<path fill={fill}  d="M492,76H20C8.954,76,0,84.954,0,96s8.954,20,20,20h472c11.046,0,20-8.954,20-20S503.046,76,492,76z"/>
-		<path fill={fill}  d="M492,396H20c-11.046,0-20,8.954-20,20c0,11.046,8.954,20,20,20h472c11.046,0,20-8.954,20-20
-			C512,404.954,503.046,396,492,396z"/>
-    </svg>
-
-    );
+      <svg
+        data-name="Layer 1"
+        id="Layer_1"
+        viewBox="0 0 64 64"
+		xmlns="http://www.w3.org/2000/svg"
+		width={width}
+      >
+        <path
+		fill={fill}
+          d="M60.85,11.72H3.15V0h57.7ZM3.15,37.86h57.7V26.14H3.15Zm57.7,14.42H3.15V64h57.7Z"
+          data-name="&lt;Compound Path&gt;"
+          id="_Compound_Path_"
+        />
+      </svg>
+    )
 }
 
 export default hamburger;

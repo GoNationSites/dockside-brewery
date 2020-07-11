@@ -89,10 +89,30 @@ const EventsShowcase = () => {
             <h3 className="has-text-centered title">
               Never miss out on an event at Dockside
             </h3>
-            <p className="has-text-centered subtitle">Live music, DJ's and more</p>
+            <p className="has-text-centered subtitle">
+              Live music, Movies, Yoga and more
+            </p>
+            <div className="non-active-events">
+              <div className="columns is-mobile">
+                {allEvents
+                  .filter(
+                    (event, idx) => event._id !== activeEvent._id && idx < 5
+                  )
+                  .map(event => (
+                    <div
+                      className="column is-2-desktop"
+                      onClick={() => setActiveEvent(event)}
+                    >
+                      <div className="event-module__image">
+                        <img src={event.image} alt={event.name} />
+                      </div>
+                    </div>
+                  ))}
+              </div>
+            </div>
             <div className="active-event">
               <div className="columns is-marginless is-paddingless">
-                <div className="column">
+                <div className="column is-paddingless pt-3">
                   <div className="event-image">
                     <img src={activeEvent.image} alt={activeEvent.name} />
                   </div>
@@ -101,7 +121,12 @@ const EventsShowcase = () => {
                   <h4 className="title">{activeEvent.name}</h4>
                   {getEventTime(activeEvent)}
 
-                  <p>{activeEvent.description}</p>
+                  <p>
+                    {activeEvent.description.length > 100
+                      ? `${activeEvent.description.substring(0, 100)}...`
+                      : activeEvent.description}
+                  </p>
+                  <h4 className="tags-title">Event Tags:</h4>
                   <div className="event-tags">
                     {activeEvent &&
                       activeEvent.tags &&
@@ -110,23 +135,10 @@ const EventsShowcase = () => {
                 </div>
               </div>
             </div>
-            <div className="non-active-events">
-              <div className="columns is-mobile">
-                {allEvents
-                  .filter(
-                    (event, idx) => event._id !== activeEvent._id && idx < 5
-                  )
-                  .map(event => (
-                    <div className="column is-2-desktop" onClick={() => setActiveEvent(event)}>
-                      <div className="event-module__image">
-                        <img src={event.image} alt={event.name} />
-                      </div>
-                    </div>
-                  ))}
-              </div>
-              <div className="has-text-centered">
-                  <Link className="button is-outlined is-white is-uppercase">View All Events</Link>
-              </div>
+            <div className="has-text-centered">
+              <Link className="button button__view-all-events is-uppercase">
+                View All Events
+              </Link>
             </div>
           </>
         )

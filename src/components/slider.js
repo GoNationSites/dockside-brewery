@@ -1,15 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import {Link} from 'gatsby'
 import "react-slideshow-image/dist/styles.css"
-import { Zoom } from "react-slideshow-image"
+import { Fade } from "react-slideshow-image"
 import axios from "axios"
 import cloudinaryOptimize from "../helpers/cloudinaryOptimize"
+import Compass from './compass'
 let jsonpAdapter = require("axios-jsonp")
 
 const slideImages = [
-  "https://res.cloudinary.com/gonation/image/upload/w_600/q_auto/v1594238069/sites/dockside-brewing/hero-1.jpg",
-  "https://res.cloudinary.com/gonation/image/upload/w_600/q_auto/v1594238069/sites/dockside-brewing/hero-2.jpg",
-  "https://res.cloudinary.com/gonation/image/upload/w_600/q_auto/v1594238070/sites/dockside-brewing/hero-3.jpg",
+  "https://res.cloudinary.com/gonation/image/upload/sites/dockside-brewing/girl-holding-drinks.jpg",
+  "https://res.cloudinary.com/gonation/image/upload/w_600/q_auto/sites/dockside-brewing/hero-1.jpg",
+  "https://res.cloudinary.com/gonation/image/upload/w_600/q_auto/sites/dockside-brewing/hero-2.jpg",
+  // "https://res.cloudinary.com/gonation/image/upload/w_600/q_auto/v1594238070/sites/dockside-brewing/hero-3.jpg",
 ]
 
 
@@ -62,22 +64,29 @@ const Slider = () => {
         {shoutBG ? (
           <div className="hero-text-container">
             <h1 className="title has-text-centered has-text-white">
-              independent craft brewery, restaurant and waterfront biergarten
+              <span className="hero-large-text">craft brewery &</span>{" "}
+              waterfront biergarten
             </h1>
-            <Link>Become a Dockside insider</Link>
+            <Link>Become a DockInsider</Link>
           </div>
         ) : (
           <>
-            <Zoom {...zoomOutProperties}>
+            <Fade {...zoomOutProperties}>
               {slideImages.map((each, index) => (
                 <img key={index} style={{ width: "100%" }} src={each} />
               ))}
-            </Zoom>
+            </Fade>
             <div className="hero-text-container">
               <h1 className="title has-text-centered has-text-white">
-                independent craft brewery, restaurant and waterfront biergarten
+                <span className="hero-large-text">craft brewery &</span>{" "}
+                waterfront biergarten
               </h1>
-              <Link>Become a Dockside insider</Link>
+              <Link>Become a DockInsider</Link>
+            </div>
+            <div className="is-hidden-desktop compass-container">
+              <span className="">
+                <Compass fill="#fff" />
+              </span>
             </div>
           </>
         )}
