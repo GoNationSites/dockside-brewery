@@ -1,13 +1,14 @@
-import React from "react"
+import React, {useState} from "react"
 import Layout from "../components/Layout"
 import EventForm from "../components/forms/EventsForm"
 import Menu from "../components/menus/Menu"
 import PDFMenu from "../assets/PDFs/DocksidePartyOptions.pdf"
 export default function PrivateEvents({data}) {
+  const [navIsOpen, setNavIsOpen] = useState(false)
   const siteData = data.siteMetaData.data
   const bizID = data.siteMetaData.bizID
   return (
-    <Layout>
+    <Layout pageTitle="beer" data="siteData" navIsOpen={navIsOpen}>
       <section id="beer-page">
         {/* <div className="content">
           <h1>Beer</h1>
