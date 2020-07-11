@@ -1,4 +1,4 @@
-import React from "react"
+import React, {useState} from "react"
 import Layout from "../components/Layout"
 import EventForm from "../components/forms/EventsForm"
 import Menu from "../components/menus/Menu"
@@ -6,7 +6,10 @@ import PDFMenu from "../assets/PDFs/DocksidePartyOptions.pdf"
 import PrintableMenuBtnImage from "../assets/private-events-1.jpg"
 import MakeEnquiryBtnImage from "../assets/private-events-2.jpg"
 
-export default function PrivateEvents() {
+export default function PrivateEvents({data}) {
+  const [navIsOpen, setNavIsOpen] = useState(false)
+  const siteData = data.siteMetaData.data
+  const bizID = data.siteMetaData.bizID
   const scrollToSection = sectionSelector => {
     document.querySelector(sectionSelector).scrollIntoView({
       behavior: "smooth",
@@ -16,7 +19,7 @@ export default function PrivateEvents() {
   }
 
   return (
-    <Layout>
+    <Layout pageTitle="private-events" data={siteData} navIsOpen={navIsOpen}>
       <section id="private-events-page">
         <div className="content">
           <h1>Private Events</h1>

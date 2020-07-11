@@ -8,9 +8,12 @@ import AllInOnce from "../components/menus/allIn"
 import CellsAndAllIn from "../components/menus/cellsAndAllIn"
 import TabsView from "../components/menus/tabsView"
 
-export default function Food() {
+export default function Food({data}) {
+  const [navIsOpen, setNavIsOpen] = useState(false)
+  const siteData = data.siteMetaData.data
+  const bizID = data.siteMetaData.bizID
   return (
-    <Layout>
+    <Layout pageTitle="drinks" data={siteData} navIsOpen={navIsOpen}>
       <section id="drinks-page">
         <Menu poweredListID={"powered-list-7"} mode={"cellsThenAllInOnce"} />
       </section>

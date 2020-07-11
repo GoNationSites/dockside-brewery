@@ -7,7 +7,10 @@ import Hours from "../components/hours/hoursOld"
 import ContactForm from "../components/forms/ContactForm"
 // import Hours from "../components/hours/Hours"
 
-export default function Contact() {
+export default function Contact({data}) {
+  const [navIsOpen, setNavIsOpen] = useState(false)
+  const siteData = data.siteMetaData.data
+  const bizID = data.siteMetaData.bizID
   const [contactData, setContactData] = useState({
     contactData: null,
     isLoading: true,
@@ -40,7 +43,6 @@ export default function Contact() {
     } = contactData.contactData
     return (
       <div className="address">
-        {console.log(contactData)}
         <h1>{name}</h1>
         <p>{street}</p>
         <p>
@@ -60,7 +62,7 @@ export default function Contact() {
   }
 
   return (
-    <Layout>
+    <Layout pageTitle="contact" data={siteData} navIsOpen={navIsOpen}>
       <section id="contact-page">
         <section className="contact-details-container">
           <div className="contact-details">
