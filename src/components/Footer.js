@@ -91,7 +91,7 @@ const Footer = ({ data }) => {
           <img src={DesktopLogo} alt="Dockside" />
         </span>
       </div>
-      <h3 className="has-text-centered title social-title">Let's get social</h3>
+      <h3 className="has-text-centered title social-title is-primary">Let's get social</h3>
       <div className="footer-social">
         <div>
           <Facebook width="20px" />

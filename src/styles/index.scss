@@ -20,6 +20,10 @@ body {
   font-family: "Rubik", sans-serif;
   //   overflow-x: hidden;
 }
+
+.is-primary {
+  color: $primary;
+}
 @import "hero.scss";
 @import "faq.scss";
 @import "./privateParty.scss";
