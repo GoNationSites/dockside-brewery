@@ -9,7 +9,7 @@ import Beer from "./beer"
 import Twitter from "./twitter"
 import Facebook from "./facebook"
 import Instagram from "./instagram"
-import Logo from "../../public/footer-logo.png"
+import Logo from "../assets/circle-dockside-logo.png"
 import DesktopLogo from "../../public/desktop-footer-logo.png"
 
 const Footer = ({ data }) => {
