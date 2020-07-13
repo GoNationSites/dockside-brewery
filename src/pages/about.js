@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react"
 import Layout from "../components/Layout"
 import axios from "axios"
 import jsonpAdapter from "axios-jsonp"
-import AboutHeroImage from "../assets/about-hero.jpg"
 import AboutImage from "../assets/about-image.jpg"
 export default function About({ data }) {
   const [navIsOpen, setNavIsOpen] = useState(false)
@@ -31,10 +30,6 @@ export default function About({ data }) {
   return (
     <Layout pageTitle="about" data={siteData} navIsOpen={navIsOpen}>
       <section id="about-page">
-        {/* <div className="hero-image">
-          <img src={AboutHeroImage}></img>
-        </div> */}
-
         <section className="about-content">
           <div className="about-text">
             <h1 className="title">About Us</h1>

@@ -9,7 +9,7 @@ import Beer from "./beer"
 import Twitter from "./twitter"
 import Facebook from "./facebook"
 import Instagram from "./instagram"
-import Logo from "../../public/footer-logo.png"
+import Logo from "../assets/circle-dockside-logo.png"
 import DesktopLogo from "../../public/desktop-footer-logo.png"
 
 const Footer = ({ data }) => {
@@ -77,7 +77,7 @@ const Footer = ({ data }) => {
           <Link>Contact</Link>
         </div>
         <div className="footer-link">
-          <Link>
+          <Link to="book-a-party">
             <span>Book A Party</span>
           </Link>
         </div>
@@ -91,7 +91,7 @@ const Footer = ({ data }) => {
           <img src={DesktopLogo} alt="Dockside" />
         </span>
       </div>
-      <h3 className="has-text-centered title social-title">Let's get social</h3>
+      <h3 className="has-text-centered title social-title is-primary">Let's get social</h3>
       <div className="footer-social">
         <div>
           <Facebook width="20px" />

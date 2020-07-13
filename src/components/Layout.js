@@ -4,14 +4,16 @@ import MobileLogo from "../../public/logo-white.png"
 import LogoMobile from "../assets/logo-girl.png"
 import LogoGirl from "../assets/white-logo-girl.png"
 import M41 from "./icons/M41"
+import Hamburger from "../components/hamburger"
+import Close from "../components/close"
 import Footer from "./Footer"
 import DesktopShoutBanner from "./DesktopShoutBanner"
 import Hero from "../components/Hero"
 import "../styles/index.scss"
 
-const Layout = ({ children, data, pageTitle, navIsOpen }) => {
+const Layout = ({ children, data, pageTitle }) => {
   const [navBackground, setNavBackground] = useState(false)
-  // const [navIsOpen, setNavIsOpen] = useState(false)
+  const [navIsOpen, setNavIsOpen] = useState(false)
   const navRef = useRef()
   navRef.current = navBackground
   useEffect(() => {
@@ -42,11 +44,7 @@ const Layout = ({ children, data, pageTitle, navIsOpen }) => {
           </span>
 
           {/* <span className="is-hidden-desktop"> */}
-          <Link
-            to="/"
-            className="is-hidden-desktop"
-            style={{ display: "flex" }}
-          >
+          <Link to="/" className="is-hidden-desktop">
             <img src={LogoMobile} alt="Dockside Brewing" />
           </Link>
           {/* </span> */}
@@ -82,7 +80,7 @@ const Layout = ({ children, data, pageTitle, navIsOpen }) => {
             </div>
             <div className="nav-link">
               <Link
-                to="/reserve"
+                to="/book-a-party"
                 style={{ display: "flex", alignItems: "center" }}
               >
                 <span>Book A Party</span>
@@ -135,7 +133,7 @@ const Layout = ({ children, data, pageTitle, navIsOpen }) => {
           </div>
           <div className="nav-link">
             <Link
-              to="/reserve"
+              to="/book-a-party"
               style={{ display: "flex", alignItems: "center" }}
             >
               <span>Book A Party</span>
@@ -147,11 +145,37 @@ const Layout = ({ children, data, pageTitle, navIsOpen }) => {
         </nav>
       </div>
 
+      <section className="section section-call-dir is-hidden-desktop">
+        <div className="columns is-mobile is-hidden-tablet is-vcentered">
+          <div className="column has-text-centered">
+            <a>Call</a>
+          </div>
+          <div className="column has-text-centered">
+            <a>Directions</a>
+          </div>
+          <div className="column has-text-centered">
+            <a>Reserve</a>
+          </div>
+          <div className="column has-text-centered column__center">
+            <div
+              className="hamburger-box is-hidden-desktop"
+              onClick={() => setNavIsOpen(!navIsOpen)}
+            >
+              {navIsOpen ? (
+                <Close width="20px" fill="#fff" />
+              ) : (
+                <Hamburger fill="#fff" width="20px" />
+              )}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {pageTitle !== "home" ? <Hero pageTitle={pageTitle} /> : ""}
 
       {children}
 
-      {/* <Footer data={data} /> */}
+      <Footer data={data} />
     </main>
   )
 }

@@ -54,7 +54,7 @@ const MenuShowcase = () => {
   }
 
   return (
-    <div className="columns is-marginless">
+    <div className="columns is-marginless is-vcentered">
       {pizzaData && activeItem && renderShowcase()}
       <div className="column">
         <div className="container__pizza">

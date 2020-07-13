@@ -7,7 +7,7 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 9999;
+    z-index: 99;
     padding: 10px 12px;
     padding-top: 20px;
     @include breakpoint($desktop) {
@@ -84,9 +84,14 @@ header {
         flex-direction: column;
         align-items: center;
         @include breakpoint($desktop) {
+            border: 3px solid $primary;
             background: $primary;
             padding: 2rem;
             height: 100%;
+            &:hover {
+                border: 3px solid white;
+                transition: all .3s;
+            }
         }
         span {
             font-size: 12px;
@@ -101,11 +106,6 @@ header {
     }
 }
 
-@include breakpoint($desktop){
-    .scrolled .header-right .cta-box span {
-        margin-left: 1rem;
-    }
-}
 
 
 .scrolled .header-right .cta-box {

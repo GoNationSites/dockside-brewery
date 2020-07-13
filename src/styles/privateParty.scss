@@ -1,0 +1,25 @@
+.title.title__party {
+    color: $primary;
+    margin-bottom: 3rem;
+}
+
+.section__book-party {
+    p {
+        font-weight: normal;
+        line-height: 2rem;
+    }
+    .has-text-weight-bold {
+        color: $secondary;
+    }
+    .columns {
+        &:nth-of-type(odd) {
+        .column__party-text {
+            order: -1;
+        }
+    }
+    }
+    .party-room-image img {
+        border-radius: 13px;
+    }
+}
+

@@ -14,13 +14,16 @@ const MenuItem = ({ item, type, withDollar, hasMenuImages }) => {
     }
   }
 
+  // When copying a menu, for some reason the string URL gets a -copy attached at the end of it. This function removes it. 
+  const removeImageCopy = img => img.substring(0, img.length - 5)
+
   const defaultType = () => (
     <div className="menuItemInnerContainer">
       {console.log(item)}
       {item.photo_id ? (
         <div className="menuItemImage">
           <div className="image-fill"></div>
-          <img src={item.imageUrl} alt="menu item" />
+          <img src={item.imageUrl.includes('copy') ? removeImageCopy(item.imageUrl) : item.imageUrl} alt="menu item" />
         </div>
       ) : (
         <div className="menuItemDefaultImage">

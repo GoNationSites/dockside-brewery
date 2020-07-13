@@ -9,7 +9,9 @@ export default function Food({data}) {
   return (
     <Layout pageTitle="home" data={siteData} navIsOpen={navIsOpen}>
       <section id="food-page">
-        <Menu poweredListID={"powered-list-4"} mode={"cellsThenAllInOnce"} />
+        <div className="container">
+          <Menu poweredListID={"powered-list-3"} mode={"cellsThenAllInOnce"} />
+        </div>
       </section>
     </Layout>
   )
