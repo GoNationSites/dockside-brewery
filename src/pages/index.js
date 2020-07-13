@@ -72,11 +72,11 @@ export default function Index({data}) {
             ) : (
               <video muted="true" muted playsInline autoPlay loop>
                 <source
-                  src="https://assets.mixkit.co/videos/preview/mixkit-yachts-dock-and-the-city-9683-large.mp4"
+                  src="https://player.vimeo.com/external/437916271.hd.mp4?s=dda8ac4331b705f471ab56fc04947ac03ccaf4a6&profile_id=175"
                   type="video/mp4"
                 ></source>
                 <source
-                  src="https://assets.mixkit.co/videos/preview/mixkit-yachts-dock-and-the-city-9683-large.mp4"
+                  src="https://player.vimeo.com/external/437916271.hd.mp4?s=dda8ac4331b705f471ab56fc04947ac03ccaf4a6&profile_id=175"
                   type="video/ogg"
                 ></source>
                 Your browser does not support the video tag.
@@ -85,14 +85,14 @@ export default function Index({data}) {
 
             <div className="hero-text-container">
               <h1 className="title has-text-centered has-text-white">
-                independent craft brewery, restaurant and waterfront biergarten
+                <span className="">craft brewery &</span>{" "}
+                waterfront biergarten
               </h1>
               <Link>Become a Dockside insider</Link>
             </div>
           </div>
         </div>
 
-        
         <section className="section section-shout is-hidden-desktop">
           {/* <div className="shout-logo">
             <img src={logo} alt="Dockside Brewery" />
