@@ -473,7 +473,7 @@ footer {
     img {
       max-width: 200px;
       @include breakpoint($desktop) {
-        max-width: none;
+        max-width: 500px;
       }
     }
   }

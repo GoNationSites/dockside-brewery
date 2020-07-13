@@ -150,7 +150,7 @@ const Layout = ({ children, data, pageTitle, navIsOpen }) => {
 
       {children}
 
-      {/* <Footer data={data} /> */}
+      <Footer data={data} />
     </main>
   )
 }
