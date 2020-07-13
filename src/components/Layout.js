@@ -175,7 +175,7 @@ const Layout = ({ children, data, pageTitle }) => {
 
       {children}
 
-      <Footer data={data} />
+      {/* <Footer data={data} /> */}
     </main>
   )
 }
