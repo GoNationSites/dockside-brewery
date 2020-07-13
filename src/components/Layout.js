@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef } from "react"
 import { Link } from "gatsby"
 import MobileLogo from "../../public/logo-white.png"
-import LogoMobile from '../assets/logo-girl.png'
-import LogoGirl from '../assets/white-logo-girl.png'
+import LogoMobile from "../assets/logo-girl.png"
+import LogoGirl from "../assets/white-logo-girl.png"
 import M41 from "./icons/M41"
 import Footer from "./Footer"
 import DesktopShoutBanner from "./DesktopShoutBanner"
@@ -12,20 +12,20 @@ import "../styles/index.scss"
 const Layout = ({ children, data, pageTitle, navIsOpen }) => {
   const [navBackground, setNavBackground] = useState(false)
   // const [navIsOpen, setNavIsOpen] = useState(false)
-   const navRef = useRef()
-   navRef.current = navBackground
-   useEffect(() => {
-     const handleScroll = () => {
-       const show = window.scrollY > 70
-       if (navRef.current !== show) {
-         setNavBackground(show)
-       }
-     }
-     document.addEventListener("scroll", handleScroll)
-     return () => {
-       document.removeEventListener("scroll", handleScroll)
-     }
-   }, [])
+  const navRef = useRef()
+  navRef.current = navBackground
+  useEffect(() => {
+    const handleScroll = () => {
+      const show = window.scrollY > 70
+      if (navRef.current !== show) {
+        setNavBackground(show)
+      }
+    }
+    document.addEventListener("scroll", handleScroll)
+    return () => {
+      document.removeEventListener("scroll", handleScroll)
+    }
+  }, [])
 
   return (
     <main>
@@ -101,7 +101,7 @@ const Layout = ({ children, data, pageTitle, navIsOpen }) => {
       </header>
       <div
         className={`is-hidden-desktop navigation-wrapper ${
-          navIsOpen ? "" : "is-hidden-mobile"
+          navIsOpen ? "" : "is-hidden-mobile is-hidden-tablet"
         }`}
       >
         <nav className={``}>
@@ -150,7 +150,7 @@ const Layout = ({ children, data, pageTitle, navIsOpen }) => {
 
       {children}
 
-      <Footer data={data} />
+      {/* <Footer data={data} /> */}
     </main>
   )
 }

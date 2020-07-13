@@ -3,7 +3,7 @@ import Layout from "../components/Layout"
 import axios from "axios"
 import jsonpAdapter from "axios-jsonp"
 import AboutImage from "../assets/about-image.jpg"
-export default function About({data}) {
+export default function About({ data }) {
   const [navIsOpen, setNavIsOpen] = useState(false)
   const siteData = data.siteMetaData.data
   const bizID = data.siteMetaData.bizID
