@@ -650,6 +650,9 @@ footer {
   border-radius: 13px;
   max-height: 200px;
   width: 100%;
+  @include breakpoint($desktop ){
+    max-height: 500px;
+  }
 }
 
 .active-image {
@@ -681,4 +684,17 @@ footer {
     align-items: center;
     font-weight: 500;
     padding: .75rem 1.75rem;
+}
+
+.section__pizza-showcase {
+  @include breakpoint($desktop) {
+    padding: 3rem 0;
+  }
+}
+
+
+.active-event {
+  @include breakpoint($desktop) {
+    margin-bottom: 3rem;
+  }
 }
