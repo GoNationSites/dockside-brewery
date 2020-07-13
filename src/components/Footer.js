@@ -77,7 +77,7 @@ const Footer = ({ data }) => {
           <Link>Contact</Link>
         </div>
         <div className="footer-link">
-          <Link>
+          <Link to="book-a-party">
             <span>Book A Party</span>
           </Link>
         </div>

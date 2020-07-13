@@ -45,7 +45,6 @@ const Layout = ({ children, data, pageTitle, navIsOpen }) => {
           <Link
             to="/"
             className="is-hidden-desktop"
-            style={{ display: "flex" }}
           >
             <img src={LogoMobile} alt="Dockside Brewing" />
           </Link>
@@ -82,7 +81,7 @@ const Layout = ({ children, data, pageTitle, navIsOpen }) => {
             </div>
             <div className="nav-link">
               <Link
-                to="/reserve"
+                to="/book-a-party"
                 style={{ display: "flex", alignItems: "center" }}
               >
                 <span>Book A Party</span>
@@ -135,7 +134,7 @@ const Layout = ({ children, data, pageTitle, navIsOpen }) => {
           </div>
           <div className="nav-link">
             <Link
-              to="/reserve"
+              to="/book-a-party"
               style={{ display: "flex", alignItems: "center" }}
             >
               <span>Book A Party</span>

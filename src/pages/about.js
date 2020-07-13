@@ -32,9 +32,9 @@ export default function About({data}) {
     <Layout pageTitle="about" data={siteData} navIsOpen={navIsOpen}>
       
       <section id="about-page">
-        <div className="hero-image">
+        {/* <div className="hero-image">
           <img src={AboutHeroImage}></img>
-        </div>
+        </div> */}
 
         <section className="about-content">
           <div className="about-text">
