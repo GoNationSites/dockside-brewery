@@ -23,7 +23,6 @@ import getGoogleStr from "../helpers/getGoogleStr"
 let jsonpAdapter = require("axios-jsonp")
 
 export default function Index({data}) {
-  const [navIsOpen, setNavIsOpen] = useState(false)
   const siteData = data.siteMetaData.data
   const bizID = data.siteMetaData.bizID
   
@@ -56,7 +55,7 @@ export default function Index({data}) {
   }
 
   return (
-    <Layout pageTitle="home" data={siteData} navIsOpen={navIsOpen}>
+    <Layout pageTitle="home" data={siteData}>
       <ParallaxProvider>
         <div className="is-hidden-desktop">
           <Slider />
@@ -93,33 +92,7 @@ export default function Index({data}) {
           </div>
         </div>
 
-        <section className="section section-call-dir is-hidden-desktop">
-          <div className="columns is-mobile is-hidden-tablet is-vcentered">
-            <div className="column has-text-centered">
-              <a>Call</a>
-            </div>
-            <div className="column has-text-centered">
-              <a>Directions</a>
-            </div>
-            <div className="column has-text-centered">
-              <a>Reserve</a>
-            </div>
-            <div className="column has-text-centered column__center">
-              
-                <div
-                  className="hamburger-box is-hidden-desktop"
-                  onClick={() => setNavIsOpen(!navIsOpen)}
-                >
-                  {navIsOpen ? (
-                    <Close width="20px" fill="#fff" />
-                  ) : (
-                    <Hamburger fill="#fff" width="20px" />
-                  )}
-                </div>
-              </div>
-            
-          </div>
-        </section>
+        
         <section className="section section-shout is-hidden-desktop">
           {/* <div className="shout-logo">
             <img src={logo} alt="Dockside Brewery" />
