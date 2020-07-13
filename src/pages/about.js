@@ -4,7 +4,7 @@ import axios from "axios"
 import jsonpAdapter from "axios-jsonp"
 import AboutHeroImage from "../assets/about-hero.jpg"
 import AboutImage from "../assets/about-image.jpg"
-export default function About({data}) {
+export default function About({ data }) {
   const [navIsOpen, setNavIsOpen] = useState(false)
   const siteData = data.siteMetaData.data
   const bizID = data.siteMetaData.bizID
@@ -30,11 +30,10 @@ export default function About({data}) {
 
   return (
     <Layout pageTitle="about" data={siteData} navIsOpen={navIsOpen}>
-      
       <section id="about-page">
-        <div className="hero-image">
+        {/* <div className="hero-image">
           <img src={AboutHeroImage}></img>
-        </div>
+        </div> */}
 
         <section className="about-content">
           <div className="about-text">

@@ -1,10 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700;900&display=swap');
-@import './variables.scss';
-@import '../../node_modules/bulma/bulma.sass';
-@import '../../node_modules/breakpoint-sass/stylesheets/breakpoint';
-@import '../../node_modules/animate.css/animate.css';
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700;900&display=swap");
+@import "./variables.scss";
+@import "../../node_modules/bulma/bulma.sass";
+@import "../../node_modules/breakpoint-sass/stylesheets/breakpoint";
+@import "../../node_modules/animate.css/animate.css";
 
 @import "./navigation.scss";
+@import "./gallery.scss";
 @import "./slider.scss";
 @import "./homepage.scss";
 @import "./about.scss";
@@ -26,25 +27,20 @@ body {
 @import "hero.scss";
 @import "faq.scss";
 
-
-html, body {
-    font-family: 'Rubik', sans-serif;
-    overflow-x: hidden;
-    font-weight: 600;
+html,
+body {
+  font-family: "Rubik", sans-serif;
+  overflow-x: hidden;
+  font-weight: 600;
 }
-
 
 img {
-    object-fit: cover;
+  object-fit: cover;
 }
-
 
 .animate__swing {
-    animation-duration: 20s;
+  animation-duration: 20s;
 }
-
-
-
 
 @-webkit-keyframes rotating /* Safari and Chrome */ {
   from {
@@ -83,4 +79,9 @@ img {
 }
 img {
   object-fit: cover;
+}
+
+.spinner-container {
+  display: flex;
+  justify-content: center;
 }
