@@ -15,11 +15,9 @@ import FeaturedBeer from "../components/FeaturedBeer"
 import MenuShowcase from "../components/MenuShowcase"
 import ParallaxImage from "../components/parallaxImage"
 import EventsShowcase from "../components/EventsShowcase"
-import Facebook from "../components/facebook"
-import Instagram from "../components/instagram"
-import Twitter from "../components/twitter"
 import formatAddress from '../helpers/formatAddress'
 import getGoogleStr from "../helpers/getGoogleStr"
+import SocialIcons from "../components/socialIcons"
 let jsonpAdapter = require("axios-jsonp")
 
 export default function Index({data}) {
@@ -135,23 +133,7 @@ export default function Index({data}) {
               </div>
             </div>
             <div className="her-footer-wrapper__left">
-              <div className="social-icons">
-                <div>
-                  <a href="">
-                    <Facebook fill="#fff" width="30px" />
-                  </a>
-                </div>
-                <div>
-                  <a href="">
-                    <Instagram fill="#fff" width="30px" />
-                  </a>
-                </div>
-                <div>
-                  <a href="">
-                    <Twitter fill="#fff" width="30px" />
-                  </a>
-                </div>
-              </div>
+              <SocialIcons links={siteData.links}  />
             </div>
           </div>
         </section>
@@ -248,7 +230,13 @@ export const query = graphql`
         sec
         usec
       }
-      links
+      links {
+        facebook
+        instagram
+        twitter 
+        youtube
+        website
+      }
       loc
       slug
       name

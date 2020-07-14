@@ -14,17 +14,6 @@ exports.sourceNodes = async ({ actions, createNodeId, createContentDigest }) => 
       `https://data.prod.gonation.com/profile/getname/?profile_id=${id}`
     )
     // const newObj = data
-    console.log('data is: ', data)
-    const linkKeys = Object.keys(data.links)
-    const linksArr = linkKeys.map(link => {
-      console.log('link in the map function: ', link)
-      return `${link} ${data.links[link]}`
-      // return {
-      //   [link]: data.links[link]
-      // }
-    })
-    data.links = linksArr
-    
     return data
   }
 

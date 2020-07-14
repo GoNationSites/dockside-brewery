@@ -95,7 +95,13 @@ export const query = graphql`
         sec
         usec
       }
-      links
+      links {
+        facebook
+        instagram
+        twitter 
+        youtube
+        website
+      }
       loc
       slug
       name
@@ -107,3 +113,4 @@ export const query = graphql`
     }
   }
 `
+

@@ -20,12 +20,14 @@
     "animate.css": "^4.1.0",
     "axios": "^0.19.2",
     "axios-jsonp": "^1.0.4",
+    "babel-plugin-styled-components": "^1.10.7",
     "breakpoint-sass": "^2.7.1",
     "bulma": "^0.9.0",
     "gatsby": "^2.23.12",
     "gatsby-image": "^2.4.12",
     "gatsby-plugin-react-helmet": "^3.3.9",
     "gatsby-plugin-sass": "^2.3.10",
+    "gatsby-plugin-styled-components": "^3.3.10",
     "gatsby-plugin-theme-ui": "^0.3.0",
     "node-sass": "^4.14.1",
     "react": "^16.8.0",
@@ -34,6 +36,7 @@
     "react-helmet": "^6.1.0",
     "react-scroll-parallax": "^2.3.3",
     "react-slideshow-image": "^2.0.1",
+    "styled-components": "^5.1.1",
     "theme-ui": "^0.3.1"
   },
   "devDependencies": {
