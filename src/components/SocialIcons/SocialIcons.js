@@ -1,12 +1,12 @@
 import React from "react"
-import { Text } from "theme-ui"
+import styled from "styled-components"
 import Facebook from "../icons/Facebook"
 import Instagram from "../icons/Instagram"
 import Twitter from "../icons/Twitter"
 
 export default function SocialIcons({ instagram, facebook, twitter }) {
   return (
-    <div className="social-icons-container">
+    <SocialIconsContainer>
       <a href={facebook} target="_blank">
         <Facebook
           color={"#ffffff"} // these colours are currently hard coded outside of theme ui. will need to bring them in as icons instead of svgs.
@@ -31,6 +31,10 @@ export default function SocialIcons({ instagram, facebook, twitter }) {
           style={{ marginRight: "10px" }}
         />
       </a>
-    </div>
+    </SocialIconsContainer>
   )
 }
+
+const SocialIconsContainer = styled.div`
+  margin: 1rem 0 1rem;
+`

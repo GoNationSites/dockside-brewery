@@ -1,4 +1,5 @@
 import React, { useEffect } from "react"
+import styled from "styled-components"
 import splitSectionChildren from "../helpers/splitSectionChildren"
 import MenuTab from "./menuTab"
 
@@ -39,11 +40,24 @@ const Tabs = ({
   }
 
   return (
-    <div className="tabs-row">
+    <TabsRow>
       {displayedCellSection && renderChildSections()}
       {children}
-    </div>
+    </TabsRow>
   )
 }
 
 export default Tabs
+
+const TabsRow = styled.div`
+  display: flex;
+  overflow: scroll;
+  padding: 20px 0;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  @media (min-width: 1024px) {
+    justify-content: center;
+  }
+`

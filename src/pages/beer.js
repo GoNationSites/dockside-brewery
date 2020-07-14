@@ -1,15 +1,15 @@
-import React, {useState} from "react"
+import React, { useState } from "react"
+import styled from "styled-components"
 import Layout from "../components/Layout"
 import EventForm from "../components/forms/EventsForm"
 import Menu from "../components/menus/Menu"
-import PDFMenu from "../assets/PDFs/DocksidePartyOptions.pdf"
-export default function PrivateEvents({data}) {
+export default function PrivateEvents({ data }) {
   const [navIsOpen, setNavIsOpen] = useState(false)
   const siteData = data.siteMetaData
   const bizID = data.siteMetaData.bizID
   return (
     <Layout pageTitle="beer" data="siteData" navIsOpen={navIsOpen}>
-      <section id="beer-page">
+      <Page>
         {/* <div className="content">
           <h1>Beer</h1>
           <p>
@@ -23,10 +23,19 @@ export default function PrivateEvents({data}) {
         <div>
           <Menu poweredListID={"powered-list-9"} mode={"allInOnce"} />
         </div>
-      </section>
+      </Page>
     </Layout>
   )
 }
+
+const Page = styled.section`
+  padding: 1rem;
+  background-color: ${props =>
+    props.theme.light ? props.theme.light : "black"};
+  font-family: ${props =>
+    props.theme.fonts ? props.theme.fonts.bodyFont : "Arial, sans-serif"};
+  }
+`
 
 export const query = graphql`
   {
@@ -76,7 +85,7 @@ export const query = graphql`
       links {
         facebook
         instagram
-        twitter 
+        twitter
         youtube
         website
       }
@@ -91,4 +100,3 @@ export const query = graphql`
     }
   }
 `
-

@@ -1,21 +1,25 @@
 import React, { useState } from "react"
+import styled from "styled-components"
 import SectionDropdown from "./SectionDropdown"
 export default function MenuSectionsDropdown({ childSections, onCellClick }) {
   const [dropdownOpen, toggleDropdown] = useState(false)
 
   return (
-    <div
-      className="menu-sections-dropdown-container"
+    <MenuSectionsDropDownContainer
       onMouseEnter={() => toggleDropdown(true)}
       onMouseLeave={() => toggleDropdown(false)}
     >
-      <button className="menu-dropdown-btn">
+      <MenuDropdownBtn>
         Our Menu
-        <span className={`arrowdown ${dropdownOpen ? "arrowdown-open" : ""}`}>
+        <ArrowDown
+        // style={`${
+        //   dropdownOpen ? { color: "scale(1.2)" } : { display: "inline" }
+        // }`}
+        >
           {" "}
           ▼
-        </span>
-      </button>
+        </ArrowDown>
+      </MenuDropdownBtn>
 
       {dropdownOpen ? (
         <SectionDropdown
@@ -23,6 +27,28 @@ export default function MenuSectionsDropdown({ childSections, onCellClick }) {
           onCellClick={onCellClick}
         />
       ) : null}
-    </div>
+    </MenuSectionsDropDownContainer>
   )
 }
+
+const MenuSectionsDropDownContainer = styled.div`
+  text-align: center;
+  margin-bottom: 2rem;
+  position: relative;
+`
+const MenuDropdownBtn = styled.button`
+  background: ${props =>
+    props.theme.secondary ? props.theme.secondary : "black"};
+  border: 2px solid
+    ${props => (props.theme.secondary ? props.theme.secondary : "black")};
+  color: white;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+`
+
+const ArrowDown = styled.div`
+  margin-left: 10px;
+  display: inline;
+`

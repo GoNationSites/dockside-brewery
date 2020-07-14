@@ -1,9 +1,9 @@
 import React from "react"
-import Arrow from "../svgs/Arrow"
+import styled from "styled-components"
 import SectionDropdownLink from "./SectionDropdownLink"
 export default function SectionDropdown({ childSections, onCellClick }) {
   return (
-    <div className="menu-sections-dropdown">
+    <MenuSectionsDropdown>
       {childSections.map(({ section, inventory }) => {
         return (
           <SectionDropdownLink
@@ -14,6 +14,17 @@ export default function SectionDropdown({ childSections, onCellClick }) {
           />
         )
       })}
-    </div>
+    </MenuSectionsDropdown>
   )
 }
+
+const MenuSectionsDropdown = styled.div`
+  background: ${props => (props.theme.primary ? props.theme.primary : "black")};
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1rem;
+  position: absolute;
+  z-index: 100;
+  width: 100%;
+  box-shadow: 2px 2px black;
+`

@@ -1,14 +1,17 @@
 import React, { useEffect, useState } from "react"
-import { Box, Flex, Text, Spinner } from "theme-ui"
+import { Spinner } from "theme-ui"
+import styled from "styled-components"
 import GalleryAlbums from "./GalleryAlbums"
 import Album from "./Album"
 
-export default function Gallery() {
+export default function Gallery(props) {
   const [galleryData, setGalleryData] = useState({
     albums: null,
     isLoading: true,
     albumOpenID: "",
   })
+
+  console.log(props)
 
   const id = "bzn-yO3xgUsKQCS7GWg0Q2ewbQ"
 
@@ -44,7 +47,7 @@ export default function Gallery() {
   }, [])
 
   return (
-    <section id="gallery-page">
+    <Wrapper>
       {/*  if data has arrived then load else show loading*/}
       {!galleryData.isLoading ? (
         <>
@@ -70,10 +73,25 @@ export default function Gallery() {
           )}
         </>
       ) : (
-        <div className="spinner-container">
+        <SpinnerWrapper>
           <Spinner />
-        </div>
+        </SpinnerWrapper>
       )}
-    </section>
+    </Wrapper>
   )
 }
+
+// styled components
+
+const Wrapper = styled.section`
+  background-color: ${props =>
+    props.theme.light ? props.theme.light : "grey"};
+  font-family: ${props =>
+    props.theme.fonts ? props.theme.fonts.bodyFont : "Arial, sans-serif"};
+  padding: ${props => (props.theme.sizes ? props.theme.sizes.M : "1rem")};
+`
+
+const SpinnerWrapper = styled.section`
+  display: flex;
+  justify-content: center;
+`

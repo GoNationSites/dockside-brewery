@@ -1,4 +1,5 @@
 import React from "react"
+import styled from "styled-components"
 import { Text, Box, Flex } from "@theme-ui/components"
 import ListBullet from "./ListBullet"
 const Price = ({ variants, withDollar, toSide }) => {
@@ -8,26 +9,50 @@ const Price = ({ variants, withDollar, toSide }) => {
         return el.label !== ""
       })
       .map(variant => (
-        <Box
+        <VariantContainer
           key={(((1 + Math.random()) * 0x10000) | 0).toString(16).substring(1)}
         >
-          {variant.labelTitle ? <Flex>{variant.labelTitle}</Flex> : ""}
-          <Flex sx={{ marginBottom: 2 }}>
-            <Text
-              sx={{ marginLeft: 3, marginRight: 3 }}
-              variant="menu.menuItemPriceLabel"
-            >
-              {"  "} <ListBullet /> {variant.label}
-            </Text>{" "}
-            <Text variant="menu.menuItemPriceVariants">
+          {variant.labelTitle ? (
+            <LabelTitle>{variant.labelTitle}</LabelTitle>
+          ) : (
+            ""
+          )}
+          <Variant>
+            <MenuItemPriceLabel>
+              <ListBullet /> {variant.label}
+            </MenuItemPriceLabel>
+            {" - "} &nbsp;
+            <MenuItemPriceVariants>
               {withDollar ? "$" : ""}
               {variant.price}
-            </Text>
-          </Flex>
-        </Box>
+            </MenuItemPriceVariants>
+          </Variant>
+        </VariantContainer>
       ))
 
-  return <div className="variants-container">{renderPrices()}</div>
+  return <VariantsContainer>{renderPrices()}</VariantsContainer>
 }
 
 export default Price
+
+const VariantsContainer = styled.div``
+
+const VariantContainer = styled.div`
+  display: flex;
+`
+
+const LabelTitle = styled.div`
+  display: flex;
+`
+
+const Variant = styled.div`
+  margin-bottom: 8px;
+  display: flex;
+`
+
+const MenuItemPriceLabel = styled.div`
+  margin: 0;
+  margin-right: 8px;
+`
+
+const MenuItemPriceVariants = styled.div``

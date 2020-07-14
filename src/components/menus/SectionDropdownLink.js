@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import styled from "styled-components"
 import Arrow from "../svgs/Arrow"
 export default function SectionDropdownLink({
   onCellClick,
@@ -9,8 +10,7 @@ export default function SectionDropdownLink({
   const [arrowActive, toggleArrow] = useState(false)
 
   return (
-    <div
-      className="dropdown-section"
+    <DropdownSection
       key={section.name}
       onMouseOver={() => {
         toggleArrow(true)
@@ -33,6 +33,22 @@ export default function SectionDropdownLink({
         )}
         {name}
       </span>
-    </div>
+    </DropdownSection>
   )
 }
+
+const DropdownSection = styled.div`
+  width: calc(50% - (0.5rem * 2));
+  margin: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+  font-size: 1.25rem;
+  @media (min-width: 767px) {
+    width: calc(33.33% - (0.5rem * 2));
+    margin: 0.5rem;
+  }
+`

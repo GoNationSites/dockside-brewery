@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react"
 import axios from "axios"
 import jsonpAdapter from "axios-jsonp"
+import styled from "styled-components"
+import { Spinner } from "theme-ui"
 import ItemModal from "./itemModal"
 import AllInOnce from "./allIn"
 import CellsAndAllIn from "./cellsAndAllIn"
@@ -57,13 +59,22 @@ export default function Food({ poweredListID, mode }) {
       ) : (
         ""
       )}
-      <div className="menu-wrapper">
+      <MenuWrapper>
         {menuData && menuData.section ? (
           getRenderType()
         ) : (
-          <div sx={{ textAlign: "center" }}>Loading...</div>
+          <SpinnerWrapper>
+            <Spinner />
+          </SpinnerWrapper>
         )}
-      </div>
+      </MenuWrapper>
     </>
   )
 }
+
+const MenuWrapper = styled.div``
+
+const SpinnerWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+`
