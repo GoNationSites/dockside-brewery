@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react"
 import Layout from "../components/Layout"
 import axios from "axios"
 import jsonpAdapter from "axios-jsonp"
-import AboutImage from "../assets/about-image.jpg"
 export default function About({ data }) {
   const [navIsOpen, setNavIsOpen] = useState(false)
   const siteData = data.siteMetaData
@@ -42,7 +41,8 @@ export default function About({ data }) {
           </div>
 
           <div className="image-container">
-            <img src={AboutImage} />
+            // todo replace with cloudinary image instead of hardcoded
+            {/* <img src={AboutImage} /> */}
           </div>
         </section>
       </section>

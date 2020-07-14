@@ -3,8 +3,8 @@ import Layout from "../components/Layout"
 import EventForm from "../components/forms/EventsForm"
 import Menu from "../components/menus/Menu"
 import PDFMenu from "../assets/PDFs/DocksidePartyOptions.pdf"
-import PrintableMenuBtnImage from "../assets/private-events-1.jpg"
-import MakeEnquiryBtnImage from "../assets/private-events-2.jpg"
+// import PrintableMenuBtnImage from "../assets/private-events-1.jpg"
+// import MakeEnquiryBtnImage from "../assets/private-events-2.jpg"
 
 export default function PrivateEvents({data}) {
   const [navIsOpen, setNavIsOpen] = useState(false)
@@ -39,7 +39,8 @@ export default function PrivateEvents({data}) {
 
         <div className="cta-boxes">
           <a className="cta-box" href={PDFMenu} target="_blank">
-            <img className="cta-image" src={PrintableMenuBtnImage} alt="" />
+            // todo replace with cloudinary images
+            {/* <img className="cta-image" src={PrintableMenuBtnImage} alt="" /> */}
             <h3 className="title">Printable Menu</h3>
           </a>
 
@@ -49,7 +50,8 @@ export default function PrivateEvents({data}) {
               scrollToSection(".form-container")
             }}
           >
-            <img className="cta-image" src={MakeEnquiryBtnImage} alt="" />
+            // todo replace with cloudinary images
+            {/* <img className="cta-image" src={MakeEnquiryBtnImage} alt="" /> */}
             <h3 className="title">Make an Enquiry</h3>
           </div>
         </div>
