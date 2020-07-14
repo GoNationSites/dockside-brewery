@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 import axios from "axios"
 import moment from "moment"
 import { ParallaxProvider } from "react-scroll-parallax"
-import logo from "../../public/logo-gray.png"
+import logo from "../assets/logo-gray.png"
 import Layout from "../components/Layout"
 import Slider from "../components/slider"
 import Shout from "../components/shout"
@@ -23,7 +23,8 @@ import getGoogleStr from "../helpers/getGoogleStr"
 let jsonpAdapter = require("axios-jsonp")
 
 export default function Index({data}) {
-  const siteData = data.siteMetaData.data
+  console.log('data:::" , ', data)
+  const siteData = data.siteMetaData
   const bizID = data.siteMetaData.bizID
   
   const [shoutBG, setShoutBG] = useState(null)
@@ -205,64 +206,56 @@ export default function Index({data}) {
 export const query = graphql`
   {
     siteMetaData {
-      data {
-        avatar {
-          imageBaseUrl
-        }
-        city
-        desc
-        cover {
-          imageBaseUrl
-        }
-        hours {
-          fri {
-            close
-            open
-          }
-          mon {
-            close
-            open
-          }
-          sat {
-            close
-            open
-          }
-          sun {
-            close
-            open
-          }
-          thu {
-            close
-            open
-          }
-          tue {
-            close
-            open
-          }
-          wed {
-            close
-            open
-          }
-        }
-        lastPricelistUpdate {
-          sec
-          usec
-        }
-        links {
-          facebook
-          instagram
-          twitter
-          website
-          youtube
-        }
-        loc
-        slug
-        name
-        phone
-        state
-        street
-        zip
+      avatar {
+        imageBaseUrl
       }
+      city
+      desc
+      cover {
+        imageBaseUrl
+      }
+      hours {
+        fri {
+          close
+          open
+        }
+        mon {
+          close
+          open
+        }
+        sat {
+          close
+          open
+        }
+        sun {
+          close
+          open
+        }
+        thu {
+          close
+          open
+        }
+        tue {
+          close
+          open
+        }
+        wed {
+          close
+          open
+        }
+      }
+      lastPricelistUpdate {
+        sec
+        usec
+      }
+      links
+      loc
+      slug
+      name
+      phone
+      state
+      street
+      zip
       bizID
     }
   }

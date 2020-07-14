@@ -17,7 +17,7 @@ const Hero = ({pageTitle}) => {
       //     pageTitle,
       //     { lower: true }
       //   )}-hero.jpg)`,
-      background: `url(https://res.cloudinary.com/gonation/image/upload/v1594397872/sites/dockside-brewing/faq-hero.jpg)`,
+      background: `url(https://res.cloudinary.com/gonation/image/upload/v1/sites/dockside-brewing/${pageTitle}-hero.jpg)`,
       width: "100%",
       backgroundPosition: "center",
       backgroundSize: "cover",

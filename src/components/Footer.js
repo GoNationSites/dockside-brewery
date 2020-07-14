@@ -10,7 +10,7 @@ import Twitter from "./twitter"
 import Facebook from "./facebook"
 import Instagram from "./instagram"
 import Logo from "../assets/circle-dockside-logo.png"
-import DesktopLogo from "../../public/desktop-footer-logo.png"
+import DesktopLogo from "../assets/desktop-footer-logo.png"
 
 const Footer = ({ data }) => {
   return (

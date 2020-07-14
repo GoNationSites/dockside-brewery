@@ -10,7 +10,7 @@ import TabsView from "../components/menus/tabsView"
 
 export default function Food({data}) {
   const [navIsOpen, setNavIsOpen] = useState(false)
-  const siteData = data.siteMetaData.data
+  const siteData = data.siteMetaData
   const bizID = data.siteMetaData.bizID
   return (
     <Layout pageTitle="drinks" data={siteData} navIsOpen={navIsOpen}>
@@ -24,7 +24,6 @@ export default function Food({data}) {
 export const query = graphql`
   {
     siteMetaData {
-      data {
         avatar {
           imageBaseUrl
         }
@@ -67,13 +66,7 @@ export const query = graphql`
           sec
           usec
         }
-        links {
-          facebook
-          instagram
-          twitter
-          website
-          youtube
-        }
+        links
         loc
         slug
         name
@@ -81,7 +74,6 @@ export const query = graphql`
         state
         street
         zip
-      }
       bizID
     }
   }

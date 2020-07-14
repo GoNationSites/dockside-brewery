@@ -9,7 +9,7 @@ import ContactForm from "../components/forms/ContactForm"
 
 export default function Contact({data}) {
   const [navIsOpen, setNavIsOpen] = useState(false)
-  const siteData = data.siteMetaData.data
+  const siteData = data.siteMetaData
   const bizID = data.siteMetaData.bizID
   const [contactData, setContactData] = useState({
     contactData: null,
@@ -105,64 +105,56 @@ export default function Contact({data}) {
 export const query = graphql`
   {
     siteMetaData {
-      data {
-        avatar {
-          imageBaseUrl
-        }
-        city
-        desc
-        cover {
-          imageBaseUrl
-        }
-        hours {
-          fri {
-            close
-            open
-          }
-          mon {
-            close
-            open
-          }
-          sat {
-            close
-            open
-          }
-          sun {
-            close
-            open
-          }
-          thu {
-            close
-            open
-          }
-          tue {
-            close
-            open
-          }
-          wed {
-            close
-            open
-          }
-        }
-        lastPricelistUpdate {
-          sec
-          usec
-        }
-        links {
-          facebook
-          instagram
-          twitter
-          website
-          youtube
-        }
-        loc
-        slug
-        name
-        phone
-        state
-        street
-        zip
+      avatar {
+        imageBaseUrl
       }
+      city
+      desc
+      cover {
+        imageBaseUrl
+      }
+      hours {
+        fri {
+          close
+          open
+        }
+        mon {
+          close
+          open
+        }
+        sat {
+          close
+          open
+        }
+        sun {
+          close
+          open
+        }
+        thu {
+          close
+          open
+        }
+        tue {
+          close
+          open
+        }
+        wed {
+          close
+          open
+        }
+      }
+      lastPricelistUpdate {
+        sec
+        usec
+      }
+      links
+      loc
+      slug
+      name
+      phone
+      state
+      street
+      zip
       bizID
     }
   }

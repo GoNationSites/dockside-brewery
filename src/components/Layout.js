@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react"
 import { Link } from "gatsby"
-import MobileLogo from "../../public/logo-white.png"
+import MobileLogo from "../assets/logo-white.png"
 import LogoMobile from "../assets/logo-girl.png"
 import LogoGirl from "../assets/white-logo-girl.png"
 import M41 from "./icons/M41"
@@ -175,7 +175,7 @@ const Layout = ({ children, data, pageTitle }) => {
 
       {children}
 
-      {/* <Footer data={data} /> */}
+      <Footer data={data} />
     </main>
   )
 }
