@@ -6,9 +6,6 @@ import FAQBlock from "../components/FAQBlock"
 import Faq from "react-faq-component"
 
 const faq = ({ data }) => {
-  const siteData = data.siteMetaData
-  const bizID = data.siteMetaData.bizID
-
   const faqData = {
     title: "Our frequently asked questions",
     rows: [

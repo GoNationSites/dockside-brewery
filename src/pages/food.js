@@ -4,9 +4,6 @@ import Layout from "../components/Layout"
 import Menu from "../components/menus/Menu"
 
 export default function Food({ data }) {
-  const [navIsOpen, setNavIsOpen] = useState(false)
-  const siteData = data.siteMetaData
-  const bizID = data.siteMetaData.bizID
   return (
     <Layout pageTitle="home">
       <Page>

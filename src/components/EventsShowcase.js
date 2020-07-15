@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react"
 import { Link } from "gatsby"
 import axios from "axios"
 import cloudinaryOptimize from "../helpers/cloudinaryOptimize"
-import Pizza from "./pizza"
 import moment from 'moment'
 let jsonpAdapter = require("axios-jsonp")
 
@@ -104,7 +103,10 @@ const EventsShowcase = () => {
                       onClick={() => setActiveEvent(event)}
                     >
                       <div className="event-module__image">
-                        <img src={event.image} alt={event.name} />
+                        <img
+                          src={cloudinaryOptimize(event.image, 400)}
+                          alt={event.name}
+                        />
                       </div>
                     </div>
                   ))}
@@ -114,7 +116,10 @@ const EventsShowcase = () => {
               <div className="columns is-marginless is-paddingless">
                 <div className="column is-paddingless pt-3">
                   <div className="event-image">
-                    <img src={activeEvent.image} alt={activeEvent.name} />
+                    <img
+                      src={cloudinaryOptimize(activeEvent.image, 600)}
+                      alt={activeEvent.name}
+                    />
                   </div>
                 </div>
                 <div className="column">

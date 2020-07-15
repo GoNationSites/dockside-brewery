@@ -8,10 +8,9 @@ import Compass from './compass'
 let jsonpAdapter = require("axios-jsonp")
 
 const slideImages = [
-  "https://res.cloudinary.com/gonation/image/upload/sites/dockside-brewing/girl-holding-drinks.jpg",
-  "https://res.cloudinary.com/gonation/image/upload/w_600/q_auto/sites/dockside-brewing/hero-1.jpg",
-  "https://res.cloudinary.com/gonation/image/upload/w_600/q_auto/sites/dockside-brewing/hero-2.jpg",
-  // "https://res.cloudinary.com/gonation/image/upload/w_600/q_auto/v1594238070/sites/dockside-brewing/hero-3.jpg",
+  "https://res.cloudinary.com/gonation/image/upload/w_390/q_auto/sites/dockside-brewing/girl-holding-drinks.jpg",
+  "https://res.cloudinary.com/gonation/image/upload/w_390/q_auto/sites/dockside-brewing/hero-1.jpg",
+  "https://res.cloudinary.com/gonation/image/upload/w_390/q_auto/sites/dockside-brewing/hero-2.jpg",
 ]
 
 
@@ -73,7 +72,7 @@ const Slider = () => {
           <>
             <Fade {...zoomOutProperties}>
               {slideImages.map((each, index) => (
-                <img key={index} style={{ width: "100%" }} src={each} />
+                <img key={index} style={{ width: "100%" }} src={each} alt={each}  />
               ))}
             </Fade>
             <div className="hero-text-container">

@@ -2,9 +2,6 @@ import React, { useState } from "react"
 import Layout from "../components/Layout"
 import Gallery from "../components/gallery/Gallery"
 export default function GalleryPage({ data }) {
-  const [navIsOpen, setNavIsOpen] = useState(false)
-  const siteData = data.siteMetaData
-  const bizID = data.siteMetaData.bizID
   return (
     <Layout pageTitle="Gallery">
       <Gallery />

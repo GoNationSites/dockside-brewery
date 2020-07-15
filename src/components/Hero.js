@@ -1,20 +1,17 @@
 import React from "react"
 import styled from "styled-components"
 import slugify from "slugify"
+import cloudinaryOptimize from "../helpers/cloudinaryOptimize"
 
 const Hero = ({ pageTitle }) => {
-  const getLink = () => {
-    switch (pageTitle) {
-      case "food":
-        return `url(https://res.cloudinary.com/gonation/image/upload/w_2000/v1594395080/sites/dockside-brewing/food-hero.jpg)`
-      case "faq":
-        return `url(https://res.cloudinary.com/gonation/image/upload/v1594397872/sites/dockside-brewing/faq-hero.jpg)`
-    }
-  }
-
   return (
     <HeroContainer
-      backgroundImage={`url(https://res.cloudinary.com/gonation/image/upload/v1/sites/dockside-brewing/${pageTitle}-hero.jpg)`}
+      style={{
+        backgroundImage: `url(${cloudinaryOptimize(
+          `https://res.cloudinary.com/gonation/image/upload/v1/sites/dockside-brewing/${pageTitle}-hero.jpg`,
+          2000
+        )}`,
+      }}
     >
       <div className="container">
         <PageTitle>{pageTitle}</PageTitle>
@@ -33,9 +30,6 @@ const HeroContainer = styled.section`
   align-items: flex-end;
   padding: 3rem 1.5rem;
   width: 100%;
-  background-image: ${props =>
-    props.backgroundImage ? props.backgroundImage : ""};
-  background-color: ${props => (!props.backgroundImage ? "lightgrey" : "")};
   @media min-width(1024px) {
     height: 700px;
   }

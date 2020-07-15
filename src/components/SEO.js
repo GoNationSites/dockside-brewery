@@ -7,6 +7,7 @@ const SEO = ({ pageTitle, siteMetaData }) => {
   return (
     <Helmet>
       <title>{`${siteMetaData.name} | ${capitalize(pageTitle)}`}</title>
+      <html lang="en" />
       <meta name="description" content={siteMetaData.desc} />
       <meta
         name="image"

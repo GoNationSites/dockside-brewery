@@ -1,16 +1,12 @@
 import React, { useState, useEffect } from "react"
 import { Link } from "gatsby"
 import axios from "axios"
-import moment from "moment"
 import { ParallaxProvider } from "react-scroll-parallax"
 import logo from "../assets/logo-gray.png"
 import Layout from "../components/Layout"
 import Slider from "../components/slider"
 import Shout from "../components/shout"
 import Hops from "../components/hops"
-import Beer from "../components/beer"
-import Hamburger from '../components/hamburger'
-import Close from "../components/close"
 import FeaturedBeer from "../components/FeaturedBeer"
 import MenuShowcase from "../components/MenuShowcase"
 import ParallaxImage from "../components/parallaxImage"
@@ -21,7 +17,6 @@ import SocialIcons from "../components/socialIcons"
 let jsonpAdapter = require("axios-jsonp")
 
 export default function Index({data}) {
-  console.log('data:::" , ', data)
   const siteData = data.siteMetaData
   const bizID = data.siteMetaData.bizID
   
@@ -160,7 +155,7 @@ export default function Index({data}) {
             <div className="column is-paddingless" style={{ display: "flex" }}>
               <img
                 src="https://res.cloudinary.com/gonation/image/upload/w_800/q_auto/v1594238070/sites/dockside-brewing/dockside-curbside.jpg"
-                alt=""
+                alt="Curbside pickup"
               />
             </div>
           </div>

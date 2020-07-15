@@ -2,8 +2,6 @@ import React, {useState} from "react"
 import Layout from "../components/Layout"
 import Events from "../components/events/Events"
 export default function events({data}) {
-  const siteData = data.siteMetaData
-  const bizID = data.siteMetaData.bizID
   return (
     <Layout pageTitle="events">
       <Events
