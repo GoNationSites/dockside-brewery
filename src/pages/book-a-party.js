@@ -6,9 +6,6 @@ import cloudinaryOptimize from "../helpers/cloudinaryOptimize"
 // import Hours from "../components/hours/Hours"
 
 export default function BookAParty({ data }) {
-  const [navIsOpen, setNavIsOpen] = useState(false)
-  const siteData = data.siteMetaData
-  const bizID = data.siteMetaData.bizID
 
   const partyRooms = [
     {

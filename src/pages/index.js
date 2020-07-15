@@ -21,7 +21,6 @@ import SocialIcons from "../components/socialIcons"
 let jsonpAdapter = require("axios-jsonp")
 
 export default function Index({data}) {
-  console.log('data:::" , ', data)
   const siteData = data.siteMetaData
   const bizID = data.siteMetaData.bizID
   

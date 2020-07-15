@@ -6,9 +6,6 @@ import Menu from "../components/menus/Menu"
 import PDFMenu from "../assets/PDFs/DocksidePartyOptions.pdf"
 
 export default function PrivateEvents({ data }) {
-  const [navIsOpen, setNavIsOpen] = useState(false)
-  const siteData = data.siteMetaData
-  const bizID = data.siteMetaData.bizID
   const scrollToSection = sectionSelector => {
     document.querySelector(sectionSelector).scrollIntoView({
       behavior: "smooth",

@@ -9,9 +9,6 @@ import ContactForm from "../components/forms/ContactForm"
 // import Hours from "../components/hours/Hours"
 
 export default function Contact({ data }) {
-  const [navIsOpen, setNavIsOpen] = useState(false)
-  const siteData = data.siteMetaData
-  const bizID = data.siteMetaData.bizID
   const [contactData, setContactData] = useState({
     contactData: null,
     isLoading: true,

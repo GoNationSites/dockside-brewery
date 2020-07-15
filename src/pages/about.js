@@ -4,9 +4,6 @@ import Layout from "../components/Layout"
 import axios from "axios"
 import jsonpAdapter from "axios-jsonp"
 export default function About({ data }) {
-  const [navIsOpen, setNavIsOpen] = useState(false)
-  const siteData = data.siteMetaData
-  const bizID = data.siteMetaData.bizID
   const [aboutData, setAboutData] = useState({
     aboutData: null,
     isLoading: true,

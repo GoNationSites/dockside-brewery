@@ -5,9 +5,6 @@ import styled from "styled-components"
 import Menu from "../components/menus/Menu"
 
 export default function Food({ data }) {
-  const [navIsOpen, setNavIsOpen] = useState(false)
-  const siteData = data.siteMetaData
-  const bizID = data.siteMetaData.bizID
   return (
     <Layout pageTitle="drinks" >
       <Page>
