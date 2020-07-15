@@ -30,7 +30,7 @@ const MenuShowcase = () => {
         <h3 className="title">New Haven classic brick oven pizza</h3>
         <div className="active-image">
           <img
-            src={cloudinaryOptimize(activeItem.imageUrl, '1200')}
+            src={cloudinaryOptimize(activeItem.imageUrl, '600')}
             alt={activeItem.name}
           />
           <span>{activeItem.name}</span>
@@ -42,7 +42,7 @@ const MenuShowcase = () => {
               return (
                 <div onClick={() => setActiveItem(el.item)}>
                   <img
-                    src={cloudinaryOptimize(el.item.imageUrl, '1200')}
+                    src={cloudinaryOptimize(el.item.imageUrl, '400')}
                     alt={el.item.name}
                   />
                 </div>

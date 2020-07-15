@@ -9,8 +9,8 @@ import Beer from "./beer"
 import Twitter from "./twitter"
 import Facebook from "./facebook"
 import Instagram from "./instagram"
-import Logo from "../assets/circle-dockside-logo.png"
 import DesktopLogo from "../assets/desktop-footer-logo.png"
+import cloudinaryOptimize from "../helpers/cloudinaryOptimize"
 
 const Footer = ({ data }) => {
   return (
@@ -85,13 +85,20 @@ const Footer = ({ data }) => {
 
       <div className="footer-logo">
         <span className="is-hidden-desktop">
-          <img src={Logo} alt="Dockside" />
+          <img
+            src={cloudinaryOptimize(
+              "https://res.cloudinary.com/gonation/image/upload/sites/dockside-brewing/footer-mobile.png", 275
+            )}
+            alt="Dockside"
+          />
         </span>
         <span className="is-hidden-touch">
           <img src={DesktopLogo} alt="Dockside" />
         </span>
       </div>
-      <h3 className="has-text-centered title social-title is-primary">Let's get social</h3>
+      <h3 className="has-text-centered title social-title is-primary">
+        Let's get social
+      </h3>
       <div className="footer-social">
         <div>
           <Facebook width="20px" />
