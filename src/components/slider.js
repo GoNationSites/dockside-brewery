@@ -73,7 +73,7 @@ const Slider = () => {
           <>
             <Fade {...zoomOutProperties}>
               {slideImages.map((each, index) => (
-                <img key={index} style={{ width: "100%" }} src={each} />
+                <img key={index} style={{ width: "100%" }} src={each} alt={each}  />
               ))}
             </Fade>
             <div className="hero-text-container">

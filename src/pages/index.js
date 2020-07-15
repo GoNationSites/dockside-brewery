@@ -159,7 +159,7 @@ export default function Index({data}) {
             <div className="column is-paddingless" style={{ display: "flex" }}>
               <img
                 src="https://res.cloudinary.com/gonation/image/upload/w_800/q_auto/v1594238070/sites/dockside-brewing/dockside-curbside.jpg"
-                alt=""
+                alt="Curbside pickup"
               />
             </div>
           </div>

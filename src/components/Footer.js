@@ -106,7 +106,7 @@ const Footer = ({ data }) => {
       <div className="gonation">
         <img
           src="https://www.gonationsites.com/GNSE/gn-sites/images/gn-power-black.svg"
-          alt=""
+          alt={data.name}
         />
       </div>
     </footer>
