@@ -1,7 +1,8 @@
-import React, { useState} from "react"
+import React, { useState } from "react"
+import styled from "styled-components"
 import Layout from "../components/Layout"
-import Slugify from 'slugify'
-import CloudinaryOptimize from '../helpers/cloudinaryOptimize'
+import Slugify from "slugify"
+import CloudinaryOptimize from "../helpers/cloudinaryOptimize"
 import cloudinaryOptimize from "../helpers/cloudinaryOptimize"
 // import Hours from "../components/hours/Hours"
 
@@ -46,40 +47,105 @@ export default function BookAParty({ data }) {
     },
   ]
 
-  const renderPartyRooms = () => partyRooms.map(room => (
-      <div className="columns is-vcentered">
-          <div className="column">
-              <div className="party-room-content">
-                <h2 className="title">{room.name}</h2>
-                <h4 className="subtitle">Capacity: {room.capacity}</h4>
-                <p><span className="has-text-weight-bold">Perfect for: </span>{room.perfectFor}</p>
-              </div>
-          </div>
-          <div className="column column__party-text">
-              <div className="party-room-image">
-                  <img src={cloudinaryOptimize(`https://res.cloudinary.com/gonation/image/upload/sites/dockside-brewing/${Slugify(room.name, {lower: true})}.jpg`)} alt={room.name}/>
-              </div>
-          </div>
-      </div>
-  ))
-
+  const renderPartyRooms = () =>
+    partyRooms.map(room => (
+      <Content className="columns is-vcentered">
+        <ColumnText className="column">
+          <ContentTitle>{room.name}</ContentTitle>
+          <ContentSubtitle>Capacity: {room.capacity}</ContentSubtitle>
+          <ContentText>
+            <ContentLabel>Perfect for: </ContentLabel>
+            {room.perfectFor}
+          </ContentText>
+        </ColumnText>
+        <ColumnImage className="column">
+          <ContentImageContainer>
+            <ContentImage
+              src={cloudinaryOptimize(
+                `https://res.cloudinary.com/gonation/image/upload/sites/dockside-brewing/${Slugify(
+                  room.name,
+                  { lower: true }
+                )}.jpg`
+              )}
+              alt={room.name}
+            />
+          </ContentImageContainer>
+        </ColumnImage>
+      </Content>
+    ))
 
   return (
-    <Layout pageTitle="book a party" >
-      <section className="section section__book-party">
-        <h3 className="title has-text-centered title__party">
-          EXPLORE THE DOCKSIDE PARTY ROOMS
-        </h3>
-        <div className="container">
+    <Layout pageTitle="book a party">
+      <Page className="section section__book-party">
+        <Title>EXPLORE THE DOCKSIDE PARTY ROOMS</Title>
+        <ContentContainer className="container">
           {renderPartyRooms()}
-        </div>
-      </section>
+        </ContentContainer>
+      </Page>
     </Layout>
   )
 }
 
-  
- 
+const Page = styled.div`
+  p {
+    font-weight: normal;
+    line-height: 2rem;
+  }
+`
+
+const Title = styled.h3`
+  color: ${props => (props.theme.primary ? props.theme.primary : "black")};
+  margin-bottom: 3rem;
+  text-align: center;
+  font-size: 1.75rem;
+  font-weight: bold;
+  text-transform: uppercase;
+`
+
+const ContentContainer = styled.div``
+
+// renderPartyRooms Styles
+
+const ColumnImage = styled.div``
+const ColumnText = styled.div``
+const Content = styled.div`
+  &:nth-of-type(odd) ${ColumnImage} {
+    order: -1;
+  }
+`
+
+const ContentImageContainer = styled.div``
+
+const ContentImage = styled.img`
+  border-radius: 13px;
+`
+
+const ContentTitle = styled.h2`
+  font-size: 1.75rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: inherit;
+  word-break: break-word;
+  margin-bottom: 0.5rem;
+`
+
+const ContentSubtitle = styled.h4`
+  color: #111;
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.25;
+  margin-bottom: 1.5rem;
+  word-break: break-word;
+`
+
+const ContentText = styled.p``
+
+const ContentLabel = styled.span`
+  color: ${props => (props.theme.secondary ? props.theme.secondary : "black")};
+  font-weight: bold;
+  margin-right: 3px;
+`
+
 export const query = graphql`
   {
     siteMetaData {
@@ -128,7 +194,7 @@ export const query = graphql`
       links {
         facebook
         instagram
-        twitter 
+        twitter
         youtube
         website
       }
@@ -143,4 +209,3 @@ export const query = graphql`
     }
   }
 `
-
