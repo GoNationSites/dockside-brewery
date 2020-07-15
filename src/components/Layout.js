@@ -83,11 +83,9 @@ const Layout = ({ children, pageTitle, hasTopShoutBanner = false }) => {
               </Link>
             </span>
 
-            {/* <span className="is-hidden-desktop"> */}
             <Link to="/" className="is-hidden-desktop">
               <img src={LogoMobile} alt="Dockside Brewing" />
             </Link>
-            {/* </span> */}
           </div>
           <div className="header-right">
             <Navigation wrapperClass="nav__desktop is-hidden-touch" />
@@ -131,7 +129,7 @@ const Layout = ({ children, pageTitle, hasTopShoutBanner = false }) => {
         </section>
 
         {pageTitle !== "home" ? <Hero pageTitle={pageTitle} /> : ""}
-
+                
         {children}
 
         <Footer data={siteMetaData} />
