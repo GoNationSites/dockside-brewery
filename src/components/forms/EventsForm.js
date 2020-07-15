@@ -1,9 +1,9 @@
 import React from "react"
+import styled from "styled-components"
 
 export default function EventForm({ formName }) {
   return (
-    <form
-      className="contact-form"
+    <Form
       name={formName}
       method="POST"
       data-netlify="true"
@@ -34,6 +34,51 @@ export default function EventForm({ formName }) {
         placeholder="Message"
       />
       <button>Submit</button>
-    </form>
+    </Form>
   )
 }
+
+const Form = styled.form`
+
+max-width: 400px;
+margin: 0 auto;
+display: flex;
+flex-direction: column;
+> * {
+  margin-bottom: 1rem;
+  background: none;
+  border: solid 2px ${props =>
+    props.theme.primary ? props.theme.primary : "rgb(202,54,37)"};
+  border-radius: 5px;
+  box-shadow: none;
+}
+> *:last-child {
+  margin-bottom: 0;
+}
+> input {
+  padding:0.5rem;
+  height: 2rem;
+  color: white;
+  &::placeholder {
+    // color: ${props =>
+      props.theme.secondary ? props.theme.secondary : "rgb(202,54,37)"};
+  }
+}
+> textarea {
+  padding:0.5rem;
+  &::placeholder {
+    // color: ${props =>
+      props.theme.secondary ? props.theme.secondary : "rgb(202,54,37)"};
+  }
+}
+
+> button {
+  background: ${props =>
+    props.theme.secondary ? props.theme.secondary : "rgb(202,54,37)"};
+  padding: 0.75rem;
+  border: none;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+`

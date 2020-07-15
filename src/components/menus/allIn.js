@@ -1,9 +1,6 @@
-/** @jsx jsx */
-import { jsx } from "theme-ui"
-import { Text } from "@theme-ui/components"
 import React, { useState } from "react"
 import MenuItem from "./menuItem"
-import { checkPropTypes } from "prop-types"
+import styled from "styled-components"
 
 const AllIn = ({ menuData, setModalActive, onBackClick }) => {
   const [withDollar, setWithDollar] = useState(false)
@@ -28,12 +25,12 @@ const AllIn = ({ menuData, setModalActive, onBackClick }) => {
     const { section } = menu
     const parsedSection = splitSectionChildren(menu)
     return (
-      <div>
+      <AllInContainer>
         {/* header with section name and description */}
 
-        <div className="menuContainer">
-          <p className="menuSectionTitle">{section.name}</p>
-          <div className="menuItemsContainer">
+        <MenuContainer>
+          <MenuSectionTitle>{section.name}</MenuSectionTitle>
+          <MenuItemsContainer>
             {parsedSection.childItems.map(({ item }) => {
               return (
                 <MenuItem
@@ -44,21 +41,19 @@ const AllIn = ({ menuData, setModalActive, onBackClick }) => {
                 />
               )
             })}
-          </div>
-        </div>
+          </MenuItemsContainer>
+        </MenuContainer>
         {/* child sections */}
         {parsedSection.childSections.map((childSection, idx) =>
           renderMenu(childSection, true, idx)
         )}
-      </div>
+      </AllInContainer>
     )
   }
   return (
     <>
       {onBackClick ? (
-        <a className="back-to-menu-btn button" onClick={() => onBackClick()}>
-          ← Back
-        </a>
+        <BackToMenuBtn onClick={() => onBackClick()}>← Back</BackToMenuBtn>
       ) : (
         ""
       )}
@@ -68,3 +63,34 @@ const AllIn = ({ menuData, setModalActive, onBackClick }) => {
 }
 
 export default AllIn
+
+const BackToMenuBtn = styled.button`
+  background-color: ${props =>
+    props.theme.secondary ? props.theme.secondary : "black"};
+  color: white;
+  border: none;
+  margin-left: 0.5rem;
+  cursor: pointer;
+  justify-content: center;
+  padding-bottom: calc(0.5rem - 1px);
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: calc(0.5rem - 1px);
+  text-align: center;
+  white-space: nowrap;
+`
+
+const AllInContainer = styled.div``
+const MenuContainer = styled.div``
+const MenuSectionTitle = styled.p`
+  font-size: 2rem;
+  text-align: center;
+  margin: 2rem;
+  color: ${props => (props.theme.primary ? props.theme.primary : "black")};
+`
+const MenuItemsContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+`

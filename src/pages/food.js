@@ -1,21 +1,36 @@
-import React, {useState} from "react"
+import React, { useState } from "react"
+import styled from "styled-components"
 import Layout from "../components/Layout"
 import Menu from "../components/menus/Menu"
 
-export default function Food({data}) {
+export default function Food({ data }) {
   const [navIsOpen, setNavIsOpen] = useState(false)
   const siteData = data.siteMetaData
   const bizID = data.siteMetaData.bizID
   return (
     <Layout pageTitle="home" data={siteData} navIsOpen={navIsOpen}>
-      <section id="food-page">
+      <Page>
         <div className="container">
           <Menu poweredListID={"powered-list-3"} mode={"cellsThenAllInOnce"} />
         </div>
-      </section>
+      </Page>
     </Layout>
   )
 }
+
+const Page = styled.section`
+  padding: 1rem;
+  padding-top: ${props =>
+    props.theme.custom ? props.theme.custom.navHeight : "150px"};
+  background-color: ${props =>
+    props.theme.light ? props.theme.light : "black"};
+  font-family: ${props =>
+    props.theme.fonts ? props.theme.fonts.bodyFont : "Arial, sans-serif"};
+  @media (min-width: 1024px) {
+    padding-top: ${props =>
+      props.theme.custom ? props.theme.custom.navHeightDesktop : "150px"};
+  }
+`
 
 export const query = graphql`
   {
@@ -65,7 +80,7 @@ export const query = graphql`
       links {
         facebook
         instagram
-        twitter 
+        twitter
         youtube
         website
       }
@@ -80,4 +95,3 @@ export const query = graphql`
     }
   }
 `
-

@@ -1,5 +1,5 @@
 import React from "react"
-import { Box, Flex, Text } from "theme-ui"
+import styled from "styled-components"
 import moment from "moment"
 
 export default function hours({ hours }) {
@@ -24,13 +24,12 @@ export default function hours({ hours }) {
     day.map(timeBlock => {
       const labeltest = ""
       return (
-        <div
+        <TimeBlocks
           style={
             day.length > 1 || (day.length === 1 && timeBlock.label)
               ? { display: "flex", width: "100%" }
               : {}
           }
-          className="timeblocks"
           key={"id" + Math.random().toString(16).slice(2)}
         >
           {/* if the business is closed render this */}
@@ -41,47 +40,99 @@ export default function hours({ hours }) {
 
           {/* anything else render all hours and labels */}
           {!timeBlock.isOpen && !timeBlock.isClosed ? (
-            <div
-              className={`timeblock ${
+            <TimeBlock
+              style={
                 day.length > 1 || (day.length === 1 && timeBlock.label)
-                  ? "variants"
-                  : ""
-              }`}
+                  ? { display: "flex" }
+                  : {}
+              }
             >
               {timeBlock.label ? (
-                <span className="timelabel">
+                <TimeLabel>
                   {timeBlock.label}
                   {timeBlock.label}
-                </span>
+                </TimeLabel>
               ) : (
                 ""
               )}
-              <span className="time">
+              <Time>
                 {moment(timeBlock.open, "h:mm a").format("h:mm a")}-
                 {moment(timeBlock.close, "h:mm a").format("h:mm a")}
-              </span>
-            </div>
+              </Time>
+            </TimeBlock>
           ) : (
             ""
           )}
-        </div>
+        </TimeBlocks>
       )
     })
 
   return (
-    <div className="hours-block">
-      {console.log(hours)}
-      <h3 className="title">Our Hours</h3>
-      <div className="hours-container">
+    <HoursBlock>
+      <SectionTitle>Our Hours</SectionTitle>
+      <HoursContainer className="hours-container">
         {daysOfWeek.map((day, index) => {
           return (
-            <div className="dayofweekcontainer">
-              <p className="dayofweek">{dayOfTheWeekText[index]}</p>
+            <DayOfWeekContainer>
+              <DayOfWeek>{dayOfTheWeekText[index]}</DayOfWeek>
               {renderHours(day)}
-            </div>
+            </DayOfWeekContainer>
           )
         })}
-      </div>
-    </div>
+      </HoursContainer>
+    </HoursBlock>
   )
 }
+
+const HoursBlock = styled.div`
+  padding: 1rem;
+  background: white;
+  > * {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  @media (min-width: 767px) {
+    width: 50%;
+    padding: 1rem;
+  }
+`
+const SectionTitle = styled.h3`
+  font-size: 1.75rem;
+  font-weight: bold;
+  color: ${props => (props.theme.secondary ? props.theme.secondary : "black")};
+  margin-bottom: 1rem;
+  text-align: center;
+`
+const HoursContainer = styled.div``
+
+const DayOfWeekContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+`
+const DayOfWeek = styled.p`
+  display: inline-block;
+  text-transform: capitalize;
+  &::first-letter {
+    font-size: 150%;
+    color: $secondary;
+  }
+`
+
+const TimeBlocks = styled.div`
+  display: inline-block;
+  flex-direction: column;
+  vertical-align: middle;
+  text-align: right;
+  flex-grow: 1;
+`
+const TimeBlock = styled.div`
+  display: inline-block;
+`
+const TimeLabel = styled.span``
+
+const Time = styled.span`
+  flex-grow: 1;
+  text-align: right;
+`
