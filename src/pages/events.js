@@ -5,7 +5,7 @@ export default function events({data}) {
   const siteData = data.siteMetaData
   const bizID = data.siteMetaData.bizID
   return (
-    <Layout pageTitle="events" data={siteData}>
+    <Layout pageTitle="events">
       <Events
         gonationID={"bzn-yO3xgUsKQCS7GWg0Q2ewbQ"}
         slug={"dockside-brewery"}

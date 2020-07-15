@@ -9,7 +9,7 @@ export default function Food({ data }) {
   const siteData = data.siteMetaData
   const bizID = data.siteMetaData.bizID
   return (
-    <Layout pageTitle="drinks" data={siteData} navIsOpen={navIsOpen}>
+    <Layout pageTitle="drinks" >
       <Page>
         <Menu poweredListID={"powered-list-7"} mode={"cellsThenAllInOnce"} />
       </Page>

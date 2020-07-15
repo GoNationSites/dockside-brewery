@@ -54,7 +54,7 @@ export default function Index({data}) {
   }
 
   return (
-    <Layout pageTitle="home" data={siteData}>
+    <Layout pageTitle="home" hasTopShoutBanner>
       <ParallaxProvider>
         <div className="is-hidden-desktop">
           <Slider />

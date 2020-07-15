@@ -6,7 +6,7 @@ export default function GalleryPage({ data }) {
   const siteData = data.siteMetaData
   const bizID = data.siteMetaData.bizID
   return (
-    <Layout pageTitle="Gallery" data={siteData} navIsOpen={navIsOpen}>
+    <Layout pageTitle="Gallery">
       <Gallery />
     </Layout>
   )

@@ -8,7 +8,7 @@ export default function Food({ data }) {
   const siteData = data.siteMetaData
   const bizID = data.siteMetaData.bizID
   return (
-    <Layout pageTitle="home" data={siteData} navIsOpen={navIsOpen}>
+    <Layout pageTitle="home">
       <Page>
         <div className="container">
           <Menu poweredListID={"powered-list-3"} mode={"cellsThenAllInOnce"} />

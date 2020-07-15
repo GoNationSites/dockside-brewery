@@ -28,7 +28,7 @@ export default function About({ data }) {
   }, [])
 
   return (
-    <Layout pageTitle="about" data={siteData} navIsOpen={navIsOpen}>
+    <Layout pageTitle="about">
       <Page>
         <AboutContent>
           <AboutText>

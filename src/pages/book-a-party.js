@@ -68,7 +68,7 @@ export default function BookAParty({ data }) {
 
 
   return (
-    <Layout pageTitle="book a party" data={siteData}>
+    <Layout pageTitle="book a party" >
       <section className="section section__book-party">
         <h3 className="title has-text-centered title__party">
           EXPLORE THE DOCKSIDE PARTY ROOMS

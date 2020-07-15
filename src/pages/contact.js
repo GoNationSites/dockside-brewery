@@ -63,7 +63,7 @@ export default function Contact({ data }) {
   }
 
   return (
-    <Layout pageTitle="contact" data={siteData} navIsOpen={navIsOpen}>
+    <Layout pageTitle="contact">
       <Page>
         <ContactDetailsContainer className="contact-details-container">
           <ContactDetails>

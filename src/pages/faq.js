@@ -81,7 +81,7 @@ const faq = ({data}) => {
 
 
     return (
-        <Layout pageTitle="FAQ" data={siteData}>
+        <Layout pageTitle="FAQ" >
           <section className="section section__faq">
               <div className="container container__faq">
                   <Faq data={faqData} />

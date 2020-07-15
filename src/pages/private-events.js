@@ -18,7 +18,7 @@ export default function PrivateEvents({ data }) {
   }
 
   return (
-    <Layout pageTitle="private-events" data={siteData} navIsOpen={navIsOpen}>
+    <Layout pageTitle="private-events">
       <Page>
         <Content>
           <PageTitle>Private Events</PageTitle>
